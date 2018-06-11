@@ -24,4 +24,4 @@ libraries-extend:
     - 'library/framework'
 
 libraries:
-    - 'libary/global-styling'
+    - 'library/global-styling'

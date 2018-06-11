@@ -7391,3 +7391,37 @@ p:last-child,
 .control-group .help-inline:first-child {
   margin-top: 0;
 }
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
+}
+body {
+  margin-top: 0;
+  font-family: "Source Sans Pro", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+@media (min-width: 768px) {
+  .navbar-header {
+    width: 100%;
+  }
+}
+.menu--utility-links a {
+  font-size: 14px;
+  font-family: "Source Sans Pro", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-weight: 600;
+  padding: 5px 3px 0 3px;
+  border-top: 4px solid transparent;
+}
+.icon::before {
+  display: inline-block;
+  margin-right: .33em;
+  font: normal normal normal 15px/1 "Font Awesome\ 5 Free";
+  font-size: inherit;
+  text-rendering: auto;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  color: #aaa;
+}

@@ -16,8 +16,8 @@ framework:
 global-styling:
   css:
     theme:
-      css/style.css: {}
       'https://use.fontawesome.com/releases/v5.0.13/css/all.css': {type: external}
+      css/style.css: {}
 
   js:
     js/theme.js: {}
