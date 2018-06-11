@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9211e0eac53e4547d25f366bf827c7e2",
+    "content-hash": "ec791dd710a9eb5635940db2aceb1af2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -701,6 +701,59 @@
                 "docs": "https://drupal-bootstrap.org",
                 "issues": "https://www.drupal.org/project/issues/bootstrap",
                 "irc": "irc://irc.freenode.org/drupal-bootstrap"
+            }
+        },
+        {
+            "name": "drupal/bricks",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/bricks",
+                "reference": "8.x-1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bricks-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "0dc239049eee2d0cd244b7641fe96f88709d8543"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "require-dev": {
+                "drupal/bricks_inline": "*",
+                "drupal/eck": "*",
+                "drupal/entity_reference_revisions": "*",
+                "drupal/inline_entity_form": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.6",
+                    "datestamp": "1497195242",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "tonystar",
+                    "homepage": "https://www.drupal.org/user/787240"
+                }
+            ],
+            "description": "Allows to create bricky content.",
+            "homepage": "https://www.drupal.org/project/bricks",
+            "support": {
+                "source": "http://cgit.drupalcode.org/bricks"
             }
         },
         {
