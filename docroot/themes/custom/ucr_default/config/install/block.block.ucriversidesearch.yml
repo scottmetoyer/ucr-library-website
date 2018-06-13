@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ucr_global
+  theme:
+    - ucr_default
+id: ucriversidesearch
+theme: ucr_default
+region: header_top
+weight: -3
+provider: null
+plugin: ucr_global_search
+settings:
+  id: ucr_global_search
+  label: 'UC Riverside search'
+  provider: ucr_global
+  label_display: '0'
+visibility: {  }

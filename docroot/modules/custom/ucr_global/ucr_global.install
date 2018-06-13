@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for Pathauto.
+ *
+ * @ingroup pathauto
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function ucr_global_uninstall() {
+  \Drupal::configFactory()->getEditable('system.menu.audience-links')->delete();
+  \Drupal::configFactory()->getEditable('block.block.audiencelinks')->delete();
+  \Drupal::configFactory()->getEditable('system.menu.related-links')->delete();
+  \Drupal::configFactory()->getEditable('block.block.relatedlinks')->delete();
+}

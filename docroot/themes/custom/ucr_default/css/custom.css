@@ -1,0 +1,48 @@
+.header-top {
+  background: transparent;
+  border-bottom: 1px solid #c6c6c6;
+  align-items: center;
+}
+
+.block-ucr-default-organizationname {
+  color: #8d8d8d;
+  letter-spacing: 0;
+  font-size: 0.9375rem;
+  transition: 0.15s all ease;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  line-height: 1;
+  display: inline-block;
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#block-ucr-default-ucriversidesearch {
+  float: right;
+}
+
+.footer-wrapper p {
+  color: #d8e4f3;
+  font-family: "Avenir Next W01", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.6875rem;
+  line-height: 1.364;
+  letter-spacing: 0.06875rem;
+}
+
+.button.button-facebook:before {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg class=%22bcsprite-icon%22 viewBox=%…ansform=%22translate%281366 -764%29%22 fill=%22%22/%3E %3C/g%3E %3C/svg%3E") no-repeat;
+    position: absolute;
+    content: "";
+    max-width: 100%;
+    max-height: 100%;
+    transition: 0.15s all ease;
+    fill: #121821;
+    stroke: #000;
+    stroke-width: 0;
+    stroke-dasharray: 0;
+    color: #211b12;
+    background-size: inherit;
+    background-position: 50% 50%;
+    background-size: 100%;
+}

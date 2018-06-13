@@ -1,0 +1,8 @@
+name: UC Riverside Global
+type: module
+description: Provides globally-required functionality
+package: UC Riverside
+core: 8.x
+dependencies:
+  - drupal:block
+configure: ucrglobal.settings

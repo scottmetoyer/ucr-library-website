@@ -1,0 +1,11 @@
+global-styling:
+  css:
+    theme:
+      'https://use.fontawesome.com/releases/v5.0.13/css/all.css': {type: external}
+      css/style.css: {}
+
+  js:
+    js/theme.js: {}
+
+
+
