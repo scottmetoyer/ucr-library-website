@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.galleria
+    - field.field.block_content.galleria.body
+    - field.field.block_content.galleria.field_galleria_preview
+  module:
+    - text
+id: block_content.galleria.default
+targetEntityType: block_content
+bundle: galleria
+mode: default
+content:
+  body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_galleria_preview:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  scheduled_publication: true

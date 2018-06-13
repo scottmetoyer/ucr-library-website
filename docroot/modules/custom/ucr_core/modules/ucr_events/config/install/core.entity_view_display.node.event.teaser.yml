@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_admission
+    - field.field.node.event.field_contact
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_event_end_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_open_to
+    - field.field.node.event.field_event_start_date
+    - field.field.node.event.field_event_tag
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_location_description
+    - field.field.node.event.field_open_to_other
+    - field.field.node.event.field_parking_information
+    - field.field.node.event.field_registration_email
+    - field.field.node.event.field_registration_link
+    - field.field.node.event.field_registration_required
+    - field.field.node.event.field_sponsor
+    - field.field.node.event.field_url
+    - node.type.event
+  module:
+    - datetime_range
+    - link
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  field_dates:
+    type: daterange_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_url:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_admission: true
+  field_contact: true
+  field_event_end_date: true
+  field_event_image: true
+  field_event_open_to: true
+  field_event_start_date: true
+  field_event_tag: true
+  field_event_type: true
+  field_location_description: true
+  field_open_to_other: true
+  field_parking_information: true
+  field_registration_email: true
+  field_registration_link: true
+  field_registration_required: true
+  field_sponsor: true

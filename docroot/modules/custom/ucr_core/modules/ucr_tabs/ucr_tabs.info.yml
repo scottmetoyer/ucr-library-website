@@ -1,0 +1,12 @@
+name: 'UC Riverside Tabs Component'
+description: 'Provide a custom block type with ''Paragraphs'' the ability to create a tab view of content.'
+type: module
+core: 8.x
+package: UC Riverside
+dependencies:
+  - block_content
+  - entity_reference_revisions
+  - field
+  - paragraphs
+  - text
+  - ucr_core

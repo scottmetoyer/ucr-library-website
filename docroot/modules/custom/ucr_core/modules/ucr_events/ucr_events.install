@@ -1,0 +1,109 @@
+<?php
+
+/**
+ * @file
+ * Contains installation and update routines for the People Profile Content Type.
+ */
+
+use Drupal\Component\Serialization\Yaml;
+
+/**
+ * Implements hook_install().
+ */
+function ucr_events_install() {
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
+}
+
+function ucr_events_update_8001() {
+  // Removed to clean up code. Check the Git History for code if needed.
+}
+
+/**
+ * Update the Event Image with the correct path and update the event_list view.
+ */
+function ucr_events_update_8002() {
+  // Removed to clean up code. Check the Git History for code if needed.
+}
+
+/**
+ * Update the Events with the new content keywords taxonomy.
+ */
+function ucr_events_update_8003() {
+  $config = \Drupal::configFactory();
+  $uuid_service = \Drupal::service('uuid');
+
+  $page_contents = \Drupal\field\Entity\FieldConfig::loadByName('node', 'event', 'field_content_keywords');
+  if(!$page_contents) {
+    $file_path = DRUPAL_ROOT . '/modules/custom/ucr_core/modules/ucr_events/config/install/field.field.node.event.field_content_keywords.yml';
+    $file_contents = file_get_contents($file_path);
+    $new_field = Yaml::decode($file_contents);
+
+    $uuid = $uuid_service->generate();
+    $full_array = array_merge(array('uuid' => $uuid), $new_field);
+    \Drupal\field\Entity\FieldConfig::create($full_array)->save();
+  }
+
+  $meta_field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'event', 'field_meta_tags');
+  if(!$meta_field) {
+    $file_path = DRUPAL_ROOT . '/modules/custom/ucr_core/modules/ucr_events/config/install/field.field.node.event.field_meta_tags.yml';
+    $file_contents = file_get_contents($file_path);
+    $new_field = Yaml::decode($file_contents);
+
+    $uuid = $uuid_service->generate();
+    $full_array = array_merge(array('uuid' => $uuid), $new_field);
+    \Drupal\field\Entity\FieldConfig::create($full_array)->save();
+  }
+
+  // *** Update the Form Display.
+  $profile_name = $config->getEditable('core.extension')->get('profile');
+
+  if(in_array(strtolower($profile_name), array('umbrella_acsf', 'umbrella_local'))) {
+    $file_path = DRUPAL_ROOT . '/modules/custom/ucr_core/modules/ucr_events/config/umbrella/core.entity_form_display.node.event.default.yml';
+  } else {
+    $file_path = DRUPAL_ROOT . '/modules/custom/ucr_core/modules/ucr_events/config/install/core.entity_form_display.node.event.default.yml';
+  }
+  $file_contents = file_get_contents($file_path);
+  $new_form = Yaml::decode($file_contents);
+  $current_form = $config->getEditable('core.entity_form_display.node.event.default');
+  $current_form_id = $current_form->get('uuid');
+  if(!$current_form_id) { // Custom Form does not exist. So create a new one.
+    $uuid = $uuid_service->generate();
+    $full_array = array_merge(array('uuid' => $uuid), $new_form);
+    $current_form->setData($full_array)->save(TRUE);
+  } else { // A custom one exists, so update the parts needed.
+    $current_form->set('dependencies', $new_form['dependencies'])
+      ->set('third_party_settings', $new_form['third_party_settings'])
+      ->set('content', $new_form['content'])
+      ->set('hidden', $new_form['hidden'])->save(TRUE);
+  }
+}
+
+/**
+ * Update the Events View for non-umbrella sites.
+ */
+function ucr_events_update_8004() {
+  $config = \Drupal::configFactory();
+  // *** Update the Form Display.
+
+  $profile_name = $config->getEditable('core.extension')->get('profile');
+
+  if(!in_array(strtolower($profile_name), array('umbrella_acsf', 'umbrella_local'))) {
+    $file_path = DRUPAL_ROOT . '/modules/custom/ucr_core/modules/ucr_events/config/install/views.view.event_list.yml';
+    $file_contents = file_get_contents($file_path);
+    $view_xml = Yaml::decode($file_contents);
+    $current_view = $config->getEditable('views.view.event_list');
+    $current_view->set('dependencies', $view_xml['dependencies'])
+                 ->set('display', $view_xml['display'])->save(TRUE);
+  }
+}
+
+function ucr_events_update_dependencies() {
+  $dependencies = array();
+  $dependencies['ucr_events']['8003'] = [
+    'ucr_core' => '8001'
+  ];
+
+  return $dependencies;
+}

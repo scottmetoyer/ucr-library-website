@@ -1,0 +1,252 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.teaser_callout
+    - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
+    - field.field.block_content.teaser_callout.body
+    - field.field.block_content.teaser_callout.field_callout_body
+    - field.field.block_content.teaser_callout.field_callout_color
+    - field.field.block_content.teaser_callout.field_callout_image
+    - field.field.block_content.teaser_callout.field_callout_text_color
+    - field.field.block_content.teaser_callout.field_callout_title
+    - field.field.block_content.teaser_callout.field_callout_urls
+    - field.field.block_content.teaser_callout.field_optional_media
+    - field.field.block_content.teaser_callout.field_text_alignment
+  module:
+    - color_field
+    - content_moderation
+    - datetime
+    - entity_browser
+    - field_group
+    - link_attributes
+    - text
+third_party_settings:
+  field_group:
+    group_text_information:
+      children:
+        - field_callout_title
+        - field_callout_body
+        - field_callout_text_color
+        - field_text_alignment
+      parent_name: group_callout_tabs
+      weight: 8
+      format_type: tab
+      format_settings:
+        label: 'Callout Text'
+        formatter: open
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Callout Text'
+    group_background:
+      children:
+        - field_callout_image
+        - field_callout_color
+      parent_name: group_callout_tabs
+      weight: 11
+      format_type: tab
+      format_settings:
+        label: 'Background Settings'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Background Settings'
+    group_callout_tabs:
+      children:
+        - group_text_information
+        - group_links
+        - group_callout_media
+        - group_background
+      parent_name: group_callout_info
+      weight: 3
+      format_type: tabs
+      format_settings:
+        label: 'Callout Tabs'
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: 'Callout Tabs'
+    group_links:
+      children:
+        - field_callout_urls
+      parent_name: group_callout_tabs
+      weight: 9
+      format_type: tab
+      format_settings:
+        label: 'Callout Links'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Callout Links'
+    group_callout_media:
+      children:
+        - field_optional_media
+      parent_name: group_callout_tabs
+      weight: 10
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Callout Media'
+    group_teaser_form_tabs:
+      children:
+        - group_callout_info
+        - group_introduction
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Teaser Form Tabs'
+    group_callout_info:
+      children:
+        - group_callout_tabs
+      parent_name: group_teaser_form_tabs
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Callout Info'
+    group_introduction:
+      children:
+        - body
+      parent_name: group_teaser_form_tabs
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: '<em>( Optional )</em> Enter in content that will be displayed above the Teaser Callout.'
+        required_fields: true
+      label: Introduction
+id: block_content.teaser_callout.default
+targetEntityType: block_content
+bundle: teaser_callout
+mode: default
+content:
+  body:
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_callout_body:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_callout_color:
+    weight: 4
+    settings:
+      default_colors: '#000000, #1D3A61, #234674, #637EA4, #4DADF7, #3AA4DC, #329AF0, #802244, #D6336C, #FFFFFF'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_callout_image:
+    type: entity_browser_file
+    weight: 3
+    settings:
+      entity_browser: image_browser
+      field_widget_remove: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      open: false
+      view_mode: default
+    region: content
+    third_party_settings: {  }
+  field_callout_text_color:
+    weight: 5
+    settings:
+      default_colors: '#FFFFFF, #000000'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_callout_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_callout_urls:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_optional_media:
+    type: entity_browser_entity_reference
+    weight: 26
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+    region: content
+    third_party_settings: {  }
+  field_text_alignment:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Teaser Callout'
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 5
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

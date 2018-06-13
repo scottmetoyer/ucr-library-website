@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.carousel_slider
+  module:
+    - link
+id: paragraph.carousel_slider.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: carousel_slider
+label: 'Button Link'
+description: '<em>( Optional )</em> Enter in the URL that you want the button to link to. Leave blank if you just want the button as text only.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

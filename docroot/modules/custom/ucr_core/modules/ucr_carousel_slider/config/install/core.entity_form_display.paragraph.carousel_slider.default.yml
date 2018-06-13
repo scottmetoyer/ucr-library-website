@@ -1,0 +1,152 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
+    - field.field.paragraph.carousel_slider.field_image
+    - field.field.paragraph.carousel_slider.field_link
+    - field.field.paragraph.carousel_slider.field_media
+    - field.field.paragraph.carousel_slider.field_slider_button_text
+    - field.field.paragraph.carousel_slider.field_slider_orientation
+    - field.field.paragraph.carousel_slider.field_subtitle
+    - field.field.paragraph.carousel_slider.field_title
+    - paragraphs.paragraphs_type.carousel_slider
+  module:
+    - entity_browser
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_slider_information:
+      children:
+        - group_background
+        - group_text_data
+        - group_options
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        label: 'Slider Information'
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: 'Slider Information'
+    group_background:
+      children:
+        - field_image
+        - field_media
+      parent_name: group_slider_information
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Background
+    group_text_data:
+      children:
+        - field_title
+        - field_subtitle
+        - field_slider_button_text
+        - field_link
+      parent_name: group_slider_information
+      weight: 7
+      format_type: tab
+      format_settings:
+        label: Text
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Text
+    group_options:
+      children:
+        - field_slider_orientation
+      parent_name: group_slider_information
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Options
+id: paragraph.carousel_slider.default
+targetEntityType: paragraph
+bundle: carousel_slider
+mode: default
+content:
+  field_image:
+    weight: 1
+    settings:
+      entity_browser: image_browser
+      field_widget_remove: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      open: false
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: content
+  field_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_media:
+    type: entity_browser_entity_reference
+    weight: 3
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: false
+    region: content
+    third_party_settings: {  }
+  field_slider_button_text:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_slider_orientation:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_subtitle:
+    weight: 4
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: '(Press Release node view)'
+id: node.press_release_full_page
+label: 'Press Release Full Page'
+targetEntityType: node
+cache: true
