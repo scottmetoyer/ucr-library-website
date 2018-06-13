@@ -7401,27 +7401,13 @@ body {
   margin-top: 0;
   font-family: "Source Sans Pro", Arial, Helvetica, "Nimbus Sans L", sans-serif;
 }
-@media (min-width: 768px) {
-  .navbar-header {
-    width: 100%;
-  }
-}
 .menu--utility-links a {
-  font-size: 14px;
-  font-family: "Source Sans Pro", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-  font-weight: 600;
-  padding: 5px 3px 0 3px;
-  border-top: 4px solid transparent;
-}
-.icon::before {
-  display: inline-block;
-  margin-right: .33em;
-  font: normal normal normal 15px/1 "Font Awesome\ 5 Free";
-  font-size: inherit;
-  text-rendering: auto;
+  color: #95989A;
+  font-size: 13px;
   font-weight: 900;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  color: #aaa;
+}
+@media screen and (min-width: 1200px) {
+  .navbar.container {
+    max-width: 1170px;
+  }
 }
