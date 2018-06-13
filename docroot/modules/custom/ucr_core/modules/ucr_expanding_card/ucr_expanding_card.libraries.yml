@@ -1,9 +1,0 @@
-expanding_card_globals:
-  version: VERSION
-  css:
-    theme:
-      css/expanding-card.min.css: {}
-  js:
-    js/expanding-card.js: {}
-  dependencies:
-    - core/jquery

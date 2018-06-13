@@ -1,3 +1,0 @@
-/**
- * @see ../../.sass-lint.yml
- */
