@@ -49,6 +49,10 @@ body {
   padding: 10px;
 }
 
+.site-footer {
+  padding: 35px 0 0px;
+}
+
 @media (min-width: 851px) {
   .region-footer-fourth {
     border-left: solid 1px #fff;
@@ -61,12 +65,43 @@ body {
   }
 }
 
+.site-footer__bottom {
+  color: #d8e4f3;
+  background: #234674;
+  font-size: x-small;
+}
+
+.site-footer__bottom .block {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.region-footer-fifth {
+  margin: 0;
+}
+
 #navbar-top {
   border-bottom: 1px solid #c6c6c6;
-  font-size: .9375rem;
+  font-size: small;
   padding: 0;
 }
 
 #navbar-top a {
   color: #8d8d8d;
+}
+
+#navbar-main {
+  background: #234674;
+  text-transform: uppercase;
+  font-size: small;
+  padding: .3em;
+}
+
+#navbar-main a {
+  color: #fff;
+}
+
+#navbar-main .nav-link {
+  box-shadow: inset 0 0.5rem 0 0 #234674, inset 0 -.5rem 0 0 #234674, inset 1px 0 0 0 hsla(0, 0%, 100%, .18);
 }
