@@ -4,5 +4,5 @@ global-styling:
     js/global.js: {}
   css:
     component:
-      'https://fonts.googleapis.com/css?family=Source+Sans+Pro': {type: external}
+      'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic,600italic': {type: external}
       css/style.css: {}

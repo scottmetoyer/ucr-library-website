@@ -123,3 +123,13 @@ body {
   padding-bottom: 15px;
   margin-bottom: 25px;
 }
+
+p.big {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.node__content {
+  font-size: 1em;
+}
