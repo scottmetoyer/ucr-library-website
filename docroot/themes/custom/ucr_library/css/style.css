@@ -104,4 +104,12 @@ body {
 
 #navbar-main .nav-link {
   box-shadow: inset 0 0.5rem 0 0 #234674, inset 0 -.5rem 0 0 #234674, inset 1px 0 0 0 hsla(0, 0%, 100%, .18);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }
