@@ -5,7 +5,11 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Link;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -33,3 +37,9 @@ function ucr_library_form_system_theme_settings_alter(&$form, FormStateInterface
       'bg-transparent' => t('Transparent'),
   );
 }
+
+function ucr_library_preprocess_page(&$variables) {
+}
+
+
+

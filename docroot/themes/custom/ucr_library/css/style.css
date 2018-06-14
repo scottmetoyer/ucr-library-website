@@ -60,3 +60,13 @@ body {
     border-left: solid 1px #fff;
   }
 }
+
+#navbar-top {
+  border-bottom: 1px solid #c6c6c6;
+  font-size: .9375rem;
+  padding: 0;
+}
+
+#navbar-top a {
+  color: #8d8d8d;
+}
