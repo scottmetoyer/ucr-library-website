@@ -84,7 +84,7 @@ body {
 
 #navbar-top {
   border-bottom: 1px solid #c6c6c6;
-  font-size: small;
+  font-size: medium;
   padding: 0;
 }
 
@@ -95,7 +95,7 @@ body {
 #navbar-main {
   background: #234674;
   text-transform: uppercase;
-  font-size: small;
+  font-size: medium;
   padding: .3em;
 }
 
