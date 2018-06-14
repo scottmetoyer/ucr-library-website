@@ -1,9 +1,34 @@
-# Default settings should not be located here. This file is only used to
-# override existing settings. If your theme is the one that introduces a new
-# theme setting, it should use the Drupal Bootstrap base theme's
-# @BootstrapSetting annotation discovery process. This ensures that sub-theme
-# settings are inherited from base themes themes properly and to determine when
-# a setting should be saved to config as "overridden".
+# Library
+# --------------
+ucr_library_library: 'production'
+# Layout
+# --------------
+ucr_library_sidebar_position: 'both'
+ucr_library_content_offset: 0
+ucr_library_sidebar_first_width: 4
+ucr_library_sidebar_first_offset: 0
+ucr_library_sidebar_second_width: 3
+ucr_library_sidebar_second_offset: 0
 
-# Disable the CDN provider so compiled LESS source files can be used.
-cdn_provider: ''
+# Container
+# --------------
+ucr_library_fluid_container: 0
+
+# Buttons
+# --------------
+ucr_library_button_size: ''
+ucr_library_button_outline: 0
+
+# Navbar
+# --------------
+ucr_library_navbar_toggle: 1
+ucr_library_navbar_container: 'navbar-toggleable-md'
+ucr_library_navbar_top_position: ''
+ucr_library_navbar_top_color: 'navbar-dark'
+ucr_library_navbar_top_background: 'bg-secondary'
+ucr_library_navbar_position: ''
+ucr_library_navbar_color: 'navbar-dark'
+ucr_library_navbar_background: 'bg-primary'
+# Colors
+# --------------
+ucr_library_table_hover: 1
