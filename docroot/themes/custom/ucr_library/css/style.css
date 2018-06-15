@@ -23,6 +23,7 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: relative;
+    margin-top: 75px;
   }
   footer:after {
     content: "";
