@@ -3,10 +3,9 @@
  * Subtheme specific CSS.
  */
 
-body {
+#page-wrapper {
   font-family: "Source Sans Pro", Arial, Helvetica, "Nimbus Sans L", sans-serif;
   font-weight: normal;
-  font-size: 15px;
   line-height: 1.6;
   background-color: #fff;
   color: #1e1e1e;
@@ -88,7 +87,7 @@ body {
   padding: 0;
 }
 
-#navbar-top a {
+#navbar-top a.navlink {
   color: #8d8d8d;
 }
 
@@ -99,7 +98,7 @@ body {
   padding: .3em;
 }
 
-#navbar-main a {
+#navbar-main a.navlink {
   color: #fff;
 }
 
