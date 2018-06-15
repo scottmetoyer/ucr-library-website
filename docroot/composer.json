@@ -9,7 +9,10 @@
         "drupal/bootstrap": "^3.11",
         "drupal/bricks": "^1.6",
         "drupal/bootstrap_barrio": "^4.13",
-        "drupal/bootstrap_library": "^1.11"
+        "drupal/bootstrap_library": "^1.11",
+        "drupal/bootstrap_kit": "^4.2",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/eck": "^1.0@alpha"
     },
     "replace": {
         "drupal/core": "^8.5"
