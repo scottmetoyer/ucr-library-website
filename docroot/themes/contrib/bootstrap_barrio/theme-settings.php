@@ -76,6 +76,60 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     )),
   );
 
+  // List of regions
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $region_list = system_region_list($theme, $show = REGIONS_ALL);
+  // Only for initial setup if not defined on install
+  $nowrap = [
+    'breadcrumb',
+    'content',
+    'primary_menu',
+    'header',
+    'sidebar_first',
+    'sidebar_second',
+  ];
+
+  //Region
+  $form['layout']['region'] = array(
+    '#type' => 'details',
+    '#title' => t('Region'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  foreach ($region_list as $name => $description) {
+    if ( theme_get_setting('bootstrap_barrio_region_clean_' . $name) !== NULL) {
+      $region_clean = theme_get_setting('bootstrap_barrio_region_clean_' . $name);
+    }
+    else {
+      $region_clean = in_array($name, $nowrap);
+    }
+    if ( theme_get_setting('bootstrap_barrio_region_class_' . $name) !== NULL) {
+      $region_class = theme_get_setting('bootstrap_barrio_region_class_' . $name);
+    }
+    else {
+      $region_class = $region_clean ? NULL : 'row';
+    }
+
+    $form['layout']['region'][$name] = array(
+      '#type' => 'details',
+      '#title' => $description,
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['layout']['region'][$name]['bootstrap_barrio_region_clean_' . $name] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Clean wrapper for @description region', array('@description' => $description)),
+      '#default_value' => $region_clean,
+    );
+    $form['layout']['region'][$name]['bootstrap_barrio_region_class_' . $name] = array(
+      '#type' => 'textfield',
+      '#title' => t('Classes for @description region', array('@description' => $description)),
+      '#default_value' => $region_class,
+      '#size' => 40,
+      '#maxlength' => 40,
+    );
+  }
+
   // Sidebar Position
   $form['layout']['sidebar_position'] = array(
     '#type' => 'details',
@@ -178,6 +232,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Buttons'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
+  );
+  $form['components']['buttons']['bootstrap_barrio_button'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Convert input submit to button element'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_button'),
+    '#description' => t('Convert all input submit to button element. There is a known issue with Ajax Exposed Filters, which do not work as the ajax commands expects an input element, no other issues have been detected at the time.'),
   );
   $form['components']['buttons']['bootstrap_barrio_button_size'] = array(
     '#type' => 'select',
@@ -563,8 +623,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_table_style'),
     '#empty_option' => t('Default'),
     '#options' => array(
-      'messages_light' => t('Light'),
-      'messages_dark' => t('Dark'),
+      'table-striped' => t('Striped'),
+      'table-bordered' => t('Bordered'),
     ),
   );
   $form['colors']['tables']['bootstrap_barrio_table_hover'] = array(
@@ -579,8 +639,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_table_head'),
     '#empty_option' => t('Default'),
     '#options' => array(
-      'table-striped' => t('Striped'),
-      'table-bordered' => t('Bordered'),
+      'thead-light' => t('Light'),
+      'thead-light' => t('Dark'),
     ),
     '#description' => t('Select the table head color scheme'),
   );

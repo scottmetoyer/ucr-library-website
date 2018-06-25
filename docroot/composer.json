@@ -13,7 +13,8 @@
         "drupal/bootstrap_kit": "^4.2",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/eck": "^1.0@alpha",
-        "drupal/ds": "^3.1"
+        "drupal/ds": "^3.1",
+        "drupal/pathauto": "^1.2"
     },
     "replace": {
         "drupal/core": "^8.5"
