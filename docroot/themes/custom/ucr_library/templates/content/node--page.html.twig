@@ -61,8 +61,9 @@
 #}
 {{ attach_library('bootstrap_barrio/node') }}
 
+{% set has_cta = node.field_cta_title.value or node.field_cta_content.value %}
 {%
-  set classes = [
+  set article_classes = [
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -70,36 +71,53 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
+    has_cta ? 'row'
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
-  <header>
-    {{ title_prefix }}
-    {% if not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% if display_submitted %}
-      <div class="node__meta">
-        {{ author_picture }}
-        {% block submitted %}
-          <em{{ author_attributes }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          </em>
-        {% endblock %}
-        {{ metadata }}
-      </div>
-    {% endif %}
-  </header>
-  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content }}
+<article{{ attributes.addClass(article_classes) }}>
+    <header>
+        {{ title_prefix }}
+        {% if not page %}
+            <h2{{ title_attributes.addClass('node__title') }}>
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+            </h2>
+        {% endif %}
+        {{ title_suffix }}
+        {% if display_submitted %}
+            <div class="node__meta">
+                {{ author_picture }}
+                {% block submitted %}
+                    <em{{ author_attributes }}>
+                        {% trans %}Submitted by
+                        {{ author_name }}
+                        on
+                        {{ date }}{% endtrans %}
+                    </em>
+                {% endblock %}
+                {{ metadata }}
+            </div>
+        {% endif %}
+    </header>
 
-    {% if false %}
-    <aside class="col-sm-3">
-      <p>CTA goes somewhere around here</p>
-    </aside>
+    {%
+        set content_classes = [
+            'node_content',
+            'clearfix',
+            has_cta ? 'col-md-9'
+        ]
+    %}
+    <div{{ content_attributes.addclass(content_classes) }}>
+        {{ content|without('field_cta_title')|without('field_cta_content') }}
+    </div>
+
+    {% if has_cta %}
+        <div class="col-md-3">
+            <div>
+                {{ content.field_cta_title }}
+            </div>
+            <div>
+                {{ content.field_cta_content }}
+            </div>
+        </div>
     {% endif %}
-  </div>
 </article>

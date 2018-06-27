@@ -15,7 +15,8 @@
         "drupal/eck": "^1.0@alpha",
         "drupal/ds": "^3.1",
         "drupal/pathauto": "^1.2",
-        "drupal/entityqueue": "^1.0@alpha"
+        "drupal/entityqueue": "^1.0@alpha",
+        "drupal/devel": "^1.2"
     },
     "replace": {
         "drupal/core": "^8.5"
