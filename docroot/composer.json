@@ -17,7 +17,9 @@
         "drupal/pathauto": "^1.2",
         "drupal/entityqueue": "^1.0@alpha",
         "drupal/devel": "^1.2",
-        "drupal/menu_block": "^1.5"
+        "drupal/menu_block": "^1.5",
+        "drupal/current_page_crumb": "^1.2",
+        "drupal/fieldblock": "^2.0@alpha"
     },
     "replace": {
         "drupal/core": "^8.5"

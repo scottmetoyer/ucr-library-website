@@ -3,141 +3,267 @@
  * Subtheme specific CSS.
  */
 
+a {
+  color: #2d6cc0;
+  text-decoration: none;
+}
+
 #page-wrapper {
-    font-family: "Source Sans Pro", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-    font-weight: normal;
-    line-height: 1.6;
-    background-color: #fff;
-    color: #1e1e1e;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: greyscale;
+  font-family: "Source Sans Pro", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-weight: normal;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #1e1e1e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: greyscale;
 }
 
 @media screen {
-    footer {
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='6' viewBox='0 0 6…5 0h1L0 6V5zm1 5v1H5z' fill-opacity='.3' fill-rule='evenodd'/%3E%3C/svg%3E");
-        background-size: 3px;
-        background-color: #08172b;
-        z-index: 0;
-        transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        position: relative;
-        margin-top: 75px;
-    }
-    footer:after {
-        content: "";
-        background: url(../images/bg-ucr-footer.jpg) 50%;
-        background-size: cover;
-        opacity: .15;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        z-index: -1;
-    }
+  footer {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='6' viewBox='0 0 6…5 0h1L0 6V5zm1 5v1H5z' fill-opacity='.3' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 3px;
+    background-color: #08172b;
+    z-index: 0;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    margin-top: 75px;
+  }
+  footer:after {
+    content: "";
+    background: url(../images/bg-ucr-footer.jpg) 50%;
+    background-size: cover;
+    opacity: .15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 .site-footer__top .region {
-    margin-right: 0;
-    margin-left: 0;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .site-footer .block {
-    margin: 20px 0;
-    border: none;
-    padding: 10px;
+  margin: 20px 0;
+  border: none;
+  padding: 10px;
 }
 
 .site-footer {
-    padding: 35px 0 0px;
+  padding: 35px 0 0px;
 }
 
 @media (min-width: 851px) {
-    .region-footer-fourth {
-        border-left: solid 1px #fff;
-    }
-    .region-footer-third {
-        border-left: solid 1px #fff;
-    }
-    .region-footer-second {
-        border-left: solid 1px #fff;
-    }
+  .region-footer-fourth {
+    border-left: solid 1px #fff;
+  }
+  .region-footer-third {
+    border-left: solid 1px #fff;
+  }
+  .region-footer-second {
+    border-left: solid 1px #fff;
+  }
 }
 
 .site-footer__bottom {
-    color: #d8e4f3;
-    background: #234674;
-    font-size: x-small;
+  color: #d8e4f3;
+  background: #234674;
+  font-size: x-small;
 }
 
 .site-footer__bottom .block {
-    margin: 0;
-    border: none;
-    padding: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
 }
 
 .region-footer-fifth {
-    margin: 0;
+  margin: 0;
 }
 
 #navbar-top {
-    border-bottom: 1px solid #c6c6c6;
-    font-size: medium;
-    padding: 0;
+  border-bottom: 1px solid #c6c6c6;
+  font-size: medium;
+  padding: 0;
 }
 
 #navbar-top a.navlink {
-    color: #8d8d8d;
+  color: #8d8d8d;
 }
 
 #navbar-main {
-    background: #234674;
-    text-transform: uppercase;
-    font-size: medium;
-    padding: .3em;
+  background: #234674;
+  text-transform: uppercase;
+  font-size: medium;
+  padding: .3em;
 }
 
 #navbar-main a.navlink {
-    color: #fff;
+  color: #fff;
 }
 
 #navbar-main .nav-link {
-    box-shadow: inset 0 0.5rem 0 0 #234674, inset 0 -.5rem 0 0 #234674, inset 1px 0 0 0 hsla(0, 0%, 100%, .18);
-    padding-left: 1em;
-    padding-right: 1em;
+  box-shadow: inset 0 0.5rem 0 0 #234674, inset 0 -.5rem 0 0 #234674, inset 1px 0 0 0 hsla(0, 0%, 100%, .18);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 @media (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-    }
+  .container {
+    max-width: 1200px;
+  }
 }
 
 .content h1 {
-    font-size: 32px;
-    font-weight: normal;
-    color: #2d6cc0;
-    border-bottom: 1px solid #d8d8d8;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: normal;
+  color: #2d6cc0;
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 p.big {
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 1.2;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.2;
 }
 
 .node__content {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .alert {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 .breadcrumb {
-    border-radius: 0;
+  border-radius: 0;
+  background-color: #fff;
+  border: 1px solid #ececec;
+  text-transform: uppercase;
+  padding: .5rem .75rem;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-item {
+  color: #3f3f3f;
+  font-size: .8em;
+  font-weight: bold;
+  opacity: .7;
+}
+
+.block-title {
+  font-size: 18px;
+  color: #aaa;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sidebar nav ul.nav {
+  margin: 0;
+}
+
+#sidebar_second .nav-item {
+  padding: 0;
+  background-color: #dee9f5;
+  border-bottom: 1px solid #fff;
+}
+
+#sidebar_second .nav-item.nudged {
+  background-color: #fff;
+}
+
+#sidebar_second .nav-link:hover {
+  text-decoration: none;
+  background: #c3ddf8;
+}
+
+#sidebar_second .nav-link {
+  font-size: 15px;
+  color: #202020;
+  position: relative;
+  padding: 15px 20px 15px 20px;
+  color: #003f75;
+}
+
+#sidebar_second .block-fieldblock {
+  background-color: #f0f0f0;
+  padding: 25px 25px;
+  border: 0;
+  border-top: 8px solid #f1ab00;
+}
+
+#sidebar_second .block-fieldblock h4 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.region-secondary-menu a {
+  color: #95989A;
+  font-family: "Trade Gothic Next W01";
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.region-secondary-menu a:hover {
+  color: #234674;
+}
+
+.related-links {
+  background-color: #f0f0f0;
+  padding: 25px 20px;
+  margin-top: 2em;
+  border-left: 8px solid #f1ab00;
+}
+
+.related-links .field__label {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: .25em;
+}
+
+h3 {
+  margin-top: 1.25rem;
+}
+
+.faqs {
+  margin-top: 20px;
+}
+
+.faqs .field__label {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: .25em;
+}
+
+.faqs .node__title {
+  background: #f0f0f0;
+  padding: .5em;
+  border-left: 8px solid #f1ab00;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.faqs .node__content {
+  margin-bottom: 1em;
+  padding-left: 1em;
+}
+
+.faqs .field__item {
+  margin-bottom: 1em;
+}
+
+h3 {
+  margin-top: 1.5rem;
+}
+
+.clearfix:after {
+  display: block;
 }

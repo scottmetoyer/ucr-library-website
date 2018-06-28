@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{{ attach_library('bootstrap_barrio/breadcrumb') }}
+
+{% if breadcrumb %}
+    <nav role="navigation" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            {% for item in breadcrumb %}
+                {% if item.url %}
+                    <li class="breadcrumb-item">
+                        {% if item.text|lower == "home" %}
+                            <a href="{{ item.url }}"><i class="fa fa-home"></i></a>
+                        {% else %}
+                            <a href="{{ item.url }}">{{ item.text }}</a>
+                        {% endif %}
+                    </li>
+                {% else %}
+                    <li class="breadcrumb-item active">
+                        {{ item.text }}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
+{% endif %}
