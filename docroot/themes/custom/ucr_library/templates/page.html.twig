@@ -94,79 +94,225 @@
         </div>
     </nav>
 
-    <nav{{ navbar_attributes }}>
-        {% if container_navbar %}
-            <div class="container">
-            {% endif %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            {% if page.primary_menu or page.header_form %}
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse justify-content-center" id="CollapsingNavbar">
-                    {{ page.primary_menu }}
-                    {% if page.header_form %}
-                        <div class="form-inline navbar-form float-right">
-                            {{ page.header_form }}
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Category</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category 1
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <span class="text-uppercase text-white">Category 1</span>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-md-4 -->
+                                <div class="col-md-4">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-md-4 -->
+                                <div class="col-md-4">
+                                    <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                    </a>
+                                    <p class="text-white">Short image call to action</p>
+
+                                </div>
+                                <!-- /.col-md-4 -->
+                            </div>
                         </div>
-                    {% endif %}
-                </div>
-            {% endif %}
-            {% if sidebar_collapse %}
-                <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#CollapsingLeft" aria-controls="CollapsingLeft" aria-expanded="false" aria-label="Toggle navigation"></button>
-            {% endif %}
-            {% if container_navbar %}
-            </div>
-        {% endif %}
+                        <!-- /.container -->
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category 2
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <span class="text-uppercase text-white">Category 2</span>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-md-4 -->
+                                <div class="col-md-4">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-md-4 -->
+                                <div class="col-md-4">
+                                    <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                    </a>
+                                    <p class="text-white">Short image call to action</p>
+
+                                </div>
+                                <!-- /.col-md-4 -->
+                            </div>
+                        </div>
+                        <!-- /.container -->
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category 3
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <span class="text-uppercase text-white">Category 3</span>
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-md-4 -->
+                                <div class="col-md-4">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-md-4 -->
+                                <div class="col-md-4">
+
+                                    <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                    </a>
+                                    <p class="text-white">Short image call to action</p>
+
+                                </div>
+                                <!-- /.col-md-4 -->
+                            </div>
+                        </div>
+                        <!-- /.container -->
+
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
+
+</nav>
+
 {% endblock %}
 
 {% block content %}
-    <div id="main" class="{{ container }}">
-        {{ page.breadcrumb }}
-        <div class="row row-offcanvas row-offcanvas-left clearfix">
-            <main{{ content_attributes }}>
-                <section class="section">
-                    <a id="main-content" tabindex="-1"></a>
-                    {{ page.content }}
-                </section>
-            </main>
-            {% if page.sidebar_first %}
-                <div{{ sidebar_first_attributes }}>
-                    <aside class="section" role="complementary">
-                        {{ page.sidebar_first }}
-                    </aside>
-                </div>
-            {% endif %}
-            {% if page.sidebar_second %}
-                <div{{ sidebar_second_attributes }}>
-                    <aside class="section" role="complementary">
-                        {{ page.sidebar_second }}
-                    </aside>
-                </div>
-            {% endif %}
-        </div>
+<div id="main" class="{{ container }}">
+    {{ page.breadcrumb }}
+    <div class="row row-offcanvas row-offcanvas-left clearfix">
+        <main{{ content_attributes }}>
+            <section class="section">
+                <a id="main-content" tabindex="-1"></a>
+                {{ page.content }}
+            </section>
+        </main>
+        {% if page.sidebar_first %}
+            <div{{ sidebar_first_attributes }}>
+                <aside class="section" role="complementary">
+                    {{ page.sidebar_first }}
+                </aside>
+            </div>
+        {% endif %}
+        {% if page.sidebar_second %}
+            <div{{ sidebar_second_attributes }}>
+                <aside class="section" role="complementary">
+                    {{ page.sidebar_second }}
+                </aside>
+            </div>
+        {% endif %}
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}
-    <div class="{{ container }}">
-        {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-            <div class="site-footer__top clearfix">
-                {{ page.footer_first }}
-                {{ page.footer_second }}
-                {{ page.footer_third }}
-                {{ page.footer_fourth }}
-            </div>
-        {% endif %}
-
-    </div>
-
-    {% if page.footer_fifth %}
-        <div class="site-footer__bottom">
-            <div class="container">
-                {{ page.footer_fifth }}
-            </div>
+<div class="{{ container }}">
+    {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+        <div class="site-footer__top clearfix">
+            {{ page.footer_first }}
+            {{ page.footer_second }}
+            {{ page.footer_third }}
+            {{ page.footer_fourth }}
         </div>
     {% endif %}
+
+</div>
+
+{% if page.footer_fifth %}
+    <div class="site-footer__bottom">
+        <div class="container">
+            {{ page.footer_fifth }}
+        </div>
+    </div>
+{% endif %}
 
 {% endblock %}

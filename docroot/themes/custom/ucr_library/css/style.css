@@ -3,6 +3,10 @@
  * Subtheme specific CSS.
  */
 
+.bg-primary {
+  background-color: #2D6CC0 !important;
+}
+
 a {
   color: #2d6cc0;
   text-decoration: none;
@@ -98,7 +102,7 @@ a {
 }
 
 #navbar-main {
-  background: #234674;
+  background: #2D6CC0;
   text-transform: uppercase;
   font-size: medium;
   padding: .3em;
@@ -109,7 +113,7 @@ a {
 }
 
 #navbar-main .nav-link {
-  box-shadow: inset 0 0.5rem 0 0 #234674, inset 0 -.5rem 0 0 #234674, inset 1px 0 0 0 hsla(0, 0%, 100%, .18);
+  box-shadow: inset 0 0.5rem 0 0 #2D6CC0, inset 0 -.5rem 0 0 #2D6CC0, inset 1px 0 0 0 hsla(0, 0%, 100%, .18);
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -266,4 +270,52 @@ h3 {
 
 .clearfix:after {
   display: block;
+}
+
+/* Mega width dropdown */
+
+.navbar .dropdown-menu div[class*="col"] {
+  margin-bottom: 1rem;
+}
+
+.navbar.bg-primary {
+  border: none;
+}
+
+/* breakpoint and up - mega dropdown styles */
+
+@media screen and (min-width: 992px) {
+  /* remove the padding from the navbar so the dropdown hover state is not broken */
+  .navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .navbar .nav-item {
+    padding: .5rem .5rem;
+    margin: 0 .25rem;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+  }
+  /* makes the dropdown full width  */
+  .navbar .dropdown {
+    position: static;
+  }
+  .navbar .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+    /*  height of nav-item  */
+    top: 45px;
+  }
+  /* shows the dropdown menu on hover */
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown .dropdown-menu:hover {
+    display: block !important;
+  }
+  .navbar .dropdown-menu {
+    border: 1px solid rgba(0, 0, 0, .15);
+    background-color: #1b3456;
+    opacity: 1;
+  }
 }
