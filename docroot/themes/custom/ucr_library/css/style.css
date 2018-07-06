@@ -299,7 +299,7 @@ h3 {
     opacity: 1;
     border-radius: 0;
     margin: 0;
-    top: 56px;
+    top: 52px;
   }
 }
 
@@ -323,4 +323,8 @@ h3 {
 .navbar-brand {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+nav.contextual-region {
+  position: static;
 }
