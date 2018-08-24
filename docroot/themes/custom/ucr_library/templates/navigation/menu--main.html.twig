@@ -1,115 +1,289 @@
 {#
 /**
  * @file
- * Bootstrap Barrio's override to display a menu.
+ * Big chunk of hardcoded HTML to build the custom mega menu.
+ * Eventually, this will be refactored to use the Drupal menu items.
  *
- * Available variables:
- * - menu_name: The machine name of the menu.
- * - items: A nested list of menu items. Each menu item contains:
- *   - attributes: HTML attributes for the menu item.
- *   - below: The menu item child items.
- *   - title: The menu link title.
- *   - url: The menu link url, instance of \Drupal\Core\Url
- *   - localized_options: Menu link localized options.
- *   - is_expanded: TRUE if the link has visible children within the current
- *     menu tree.
- *   - is_collapsed: TRUE if the link has children within the current menu tree
- *     that are not currently visible.
- *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-{% import _self as menus %}
 
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
+<ul class="clearfix nav navbar-nav">
+    <li class="nav-item dropdown">
+        <a href="/using-library" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Using the Library</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item section-header">
+                                <a href="#">Borrow, Renew, Return</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Getting a Library Card</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Borrowing Privileges</a>
+                            </li>
+                        </ul>
+                    </div>
 
-{% macro menu_links(items, attributes, menu_level) %}
-    {% import _self as menus %}
-    {% if items %}
-        {% if menu_level == 0 %}
-            <ul{{ attributes.addClass('nav navbar-nav') }}>
-            {% else %}
-                <ul class="dropdown-menu">
-                {% endif %}
-                {% for item in items %}
-                    {%
-        set classes = [
-          menu_level ? 'dropdown-item' : 'nav-item',
-          item.is_expanded ? 'menu-item--expanded',
-          item.is_collapsed ? 'menu-item--collapsed',
-          item.in_active_trail ? 'active',
-          item.below ? 'dropdown',
-        ]
-      %}
-                    <li{{ item.attributes.addClass(classes) }}>
-                        {%
-          set link_classes = [
-            not menu_level ? 'nav-link',
-            item.in_active_trail ? 'active',
-            item.below ? 'dropdown-toggle',
-          ]
-        %}
-                        {% if item.below %}
-                            {{ link(item.title, item.url, {'class': link_classes, 'data-toggle': 'dropdown', 'aria-expanded': 'false', 'aria-haspopup': 'true' }) }}
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item section-header">
+                                <a href="#">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a chref="#">Interlibrary Loan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Disability Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Study Spaces</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Disability Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Study Spaces</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item section-header">
+                                <a href="#">Technology &amp; Equipment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Print, Copy, Scan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Equipment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Public Computers</a>
+                            </li>
+                        </ul>
+                    </div>
 
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <span class="text-uppercase text-white">Category 1</span>
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" href="#">Active</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Link item</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Link item</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <!-- /.col-md-4 -->
-                                        <div class="col-md-4">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" href="#">Active</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Link item</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#">Link item</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <!-- /.col-md-4 -->
-                                        <div class="col-md-4">
-                                            <a href="">
-                                                <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                                            </a>
-                                            <p class="text-white">Short image call to action</p>
+                    <div class="col-md-3 header-sidebar">
+                        <a href="">
+                            <img src="themes/custom/ucr_library/images/Rivera_800x452.jpg" alt="" class="img-fluid">
+                        </a>
+                        <p class="fact-header mt-3">
+                            <strong>Did you know?</strong>
+                        </p>
+                        <p class="fact text-white">A short snippet about the UCR Library goes here.</p>
+                    </div>
+                </div>
+            </div>
 
-                                        </div>
-                                        <!-- /.col-md-4 -->
-                                    </div>
-                                </div>
-                                <!-- /.container -->
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a href="/research-services" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Research services</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item">
+                                <a href="#">Research Fundamentals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Creativity and Discovery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Databases</a>
+                            </li>
+                        </ul>
+                    </div>
 
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item">
+                                <a href="#">Subject Guides</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Collection Strategists</a>
+                            </li>
+                            <li class="nav-item">
+                                <a chref="#">Managing Your Data</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item">
+                                <a href="#">Grant Support</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Publish Your Research</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Ask Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 header-sidebar">
+                        <p class="fact-header mt-3">
+                            <strong>How do I find?</strong>
+                        </p>
+                        <ul class="links">
+                            <li>
+                                <a href="">Articles &amp; Journals</a>
+                            </li>
+                            <li>
+                                <a href="">Books &amp; E-books</a>
+                            </li>
+                            <li>
+                                <a href="">Course Reserves</a>
+                            </li>
+                            <li>
+                                <a href="">Datasets &amp; Statistics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a href="/collections" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Collections</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/eaton2.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Notable Collections
                             </div>
-                            {#
-            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-          #}
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/RareBooksAndOtherSpecialCollections.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Collecting Areas
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/costo_reading.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Suggest a Book
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                        {% else %}
-                            {{ link(item.title, item.url, {'class': link_classes}) }}
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endmacro %}
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a href="/instructional-support" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Instructional support</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item">
+                                <a href="#">Library Instruction Sessions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Tours and Orientation</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item">
+                                <a href="#">Put Materials on Course Reserves</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">Affordable Course Materials Initiative</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <ul class="nav flex-column sub-section">
+                            <li class="nav-item">
+                                <a href="#">Copyright &amp; Teaching</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 header-sidebar">
+                        <p class="fact-header mt-3">
+                            <strong>Did you know?</strong>
+                        </p>
+                        <p class="fact text-white">A short snippet about the UCR Library goes here.</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a href="/libraries" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Libraries</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/Rivera_800x452.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Tomás Rivera Library
+                            </div>
+                        </a>
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/Rivera_800x452.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Orbach Science Library
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/Rivera_800x452.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Multimedia Library
+                            </div>
+                        </a>
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/Rivera_800x452.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Music Library
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="image-link" href="">
+                            <img src="themes/custom/ucr_library/images/Rivera_800x452.jpg" alt="" class="img-fluid">
+                            <div class="caption">
+                                Special Collections &amp; University Archives
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a href="/about" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">About</a>
+    </li>
+</ul>

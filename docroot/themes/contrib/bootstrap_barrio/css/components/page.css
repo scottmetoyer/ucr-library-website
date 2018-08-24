@@ -10,3 +10,7 @@
 #main-wrapper {
     padding-top: 1rem;
 }
+
+.img-fluid {
+    width: 100%;
+}
