@@ -323,7 +323,7 @@ h3 {
   padding-bottom: 1em;
   padding-top: 1em;
   border-bottom: solid 1px #486E9D;
-  padding-left: .5em;
+  padding-left: 0;
 }
 
 #navbar-main .sub-section a {
@@ -334,8 +334,10 @@ h3 {
   color: #fff;
 }
 
-.section-header {
-  padding-left: 0 !important;
+.section-header {}
+
+.badge {
+  border-radius: 0;
 }
 
 .section-header a:hover {
@@ -402,7 +404,6 @@ ul.links li a:hover {
 }
 
 .image-link {
-  margin-top: 1em;
   display: block;
   position: relative;
 }
@@ -414,11 +415,68 @@ ul.links li a:hover {
   background-color: black;
   color: white;
   padding: 1em;
-  opacity: .85;
+  opacity: .8;
   font-weight: bold;
   vertical-align: middle;
 }
 
 .caption:hover {
   color: #436391;
+}
+
+.card {
+  margin-top: 1em;
+  padding-top: 0;
+  border-radius: 0;
+  border: 0;
+}
+
+.card-body {
+  padding: .75em;
+  font-size: 13px;
+  text-transform: none;
+}
+
+.card-body p {
+  color: #68696b;
+  font-style: italic;
+}
+
+.library-info .badge {
+  float: right;
+  vertical-align: middle;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 1em;
+  opacity: .8;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-bottom: 0;
+}
+
+.badge {
+  line-height: inherit;
+}
+
+.info-link {
+  margin-top: .5em;
+  border-top: 1px #ececec dotted;
+  padding-top: .5em;
+}
+
+.btn-highlight {
+  padding: 10px;
+  background-color: #FBB70E;
+  color: #fff!important;
+  font-weight: bold;
+  border-radius: 0;
 }
