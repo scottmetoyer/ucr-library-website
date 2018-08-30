@@ -296,7 +296,7 @@ h3 {
   /* shows the dropdown menu on hover */
   .navbar .dropdown:hover .dropdown-menu,
   .navbar .dropdown .dropdown-menu:hover {
-    display: block !important;
+    /*display: block !important;*/
   }
 
   .navbar .dropdown-menu {
