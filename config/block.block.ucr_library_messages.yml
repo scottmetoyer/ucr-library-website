@@ -1,0 +1,22 @@
+uuid: 2c65a9c3-ba83-42d2-932f-cea058d6e242
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ucr_library
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: ucr_library_messages
+theme: ucr_library
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

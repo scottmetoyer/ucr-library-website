@@ -1,0 +1,24 @@
+uuid: 2ae9a19f-a806-4a78-b8da-c1429f71dfa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-links
+  module:
+    - system
+  theme:
+    - ucr_library
+id: utilitylinks
+theme: ucr_library
+region: navigation
+weight: -8
+provider: null
+plugin: 'system_menu_block:utility-links'
+settings:
+  id: 'system_menu_block:utility-links'
+  label: 'Utility links'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

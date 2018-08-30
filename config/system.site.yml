@@ -1,0 +1,14 @@
+uuid: f4963b9f-a749-44a2-b1dc-772393bf7838
+name: 'UCR Library'
+mail: scott.metoyer@ucr.edu
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

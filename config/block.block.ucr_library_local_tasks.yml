@@ -1,0 +1,22 @@
+uuid: d546e32d-9a6b-467e-a543-bdd1b45dca03
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ucr_library
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: ucr_library_local_tasks
+theme: ucr_library
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

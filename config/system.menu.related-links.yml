@@ -1,0 +1,10 @@
+uuid: 93027fca-fbd4-48da-9dbf-ae8bb547ea77
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: s20TyMHHDf4lVZRkOHqrs7Oc4pjC-k9fgn2x_igoKG8
+id: related-links
+label: 'Related links'
+description: ''
+locked: false

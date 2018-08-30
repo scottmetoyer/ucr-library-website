@@ -1,0 +1,10 @@
+uuid: 6f45d33a-28d5-4955-afd1-72c90cb78253
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: h7HALEyN3m2XDuiOVHkqfFSLkf680wQQpiVqCbEiylo
+id: audience-links
+label: 'Audience links'
+description: ''
+locked: false

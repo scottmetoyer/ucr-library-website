@@ -1,0 +1,25 @@
+uuid: 246fbd21-b4fd-422c-8850-918c9e919fc2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:57d53caf-d614-46a2-a74e-7adf7f0e06c6'
+  module:
+    - block_content
+  theme:
+    - ucr_library
+id: quicklinks
+theme: ucr_library
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:57d53caf-d614-46a2-a74e-7adf7f0e06c6'
+settings:
+  id: 'block_content:57d53caf-d614-46a2-a74e-7adf7f0e06c6'
+  label: 'Quick Links'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

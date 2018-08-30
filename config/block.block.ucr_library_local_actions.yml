@@ -1,0 +1,20 @@
+uuid: 50a19571-c5cf-4299-bc37-c4ba63978d80
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ucr_library
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: ucr_library_local_actions
+theme: ucr_library
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 280f5cee-81a7-4f93-b1d0-7f557da72861
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ucr_library
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: ucr_library_breadcrumbs
+theme: ucr_library
+region: header
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
