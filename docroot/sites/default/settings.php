@@ -746,6 +746,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  */
 $settings['trusted_host_patterns'] = array(
   'ucr-library-website\.dd$',
+  'ucr-library-website-test.us-east-2\.elasticbeanstalk.com$'
 );
 
 /**
