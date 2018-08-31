@@ -793,7 +793,7 @@ $settings['entity_update_batch_size'] = 50;
 
 // AWS Elastic Beanstalk settings
 // These will be overwritten by Dev Desktop below if we are in a local development environment
-  
+
 $databases = array();
 $config_directories = array();
 
