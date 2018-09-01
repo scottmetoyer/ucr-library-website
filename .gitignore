@@ -39,3 +39,7 @@ sites/simpletest
 # simpletest
 
 ucr-library-website.dd
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
