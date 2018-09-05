@@ -45,21 +45,26 @@
 @media (min-width: 851px) {
   .region-footer-fourth {
     border-left: solid 1px #fff;
+    min-height: 275px;
   }
 
   .region-footer-third {
     border-left: solid 1px #fff;
+    min-height: 275px;
   }
 
   .region-footer-second {
     border-left: solid 1px #fff;
+    min-height: 275px;
   }
 }
 
 .site-footer__bottom {
-  color: #d8e4f3;
   background: #234674;
   font-size: x-small;
+  text-align: center;
+  font-size: 14px;
+  color: white;
 }
 
 .site-footer__bottom .block {
@@ -68,8 +73,21 @@
   padding: 0;
 }
 
+.site-footer__bottom ul {
+  list-style: none;
+}
+
+.site-footer__bottom ul li {
+  display: inline;
+}
+
 .region-footer-fifth {
   margin: 0;
+}
+
+#block-legallinks {
+  width: 100%;
+  text-align: center;
 }
 
 body footer .ucr-footer-info address {
