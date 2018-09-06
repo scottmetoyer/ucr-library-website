@@ -1,0 +1,76 @@
+.ucr-homepage-hero-video {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  line-height: 0;
+  height: 640px;
+  max-height: 900px;
+}
+
+.ucr-homepage-hero-video .hero-video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ucr-homepage-hero-video .hero-video video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 49.99%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+.ucr-homepage-hero-video .video-text-area {
+  position: absolute;
+  bottom: 70px;
+  left: 40px;
+  min-width: 41%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 30px 30px;
+  line-height: normal;
+}
+
+.ucr-homepage-hero-video .video-text-area .video-text-title h1 {
+  margin: 0;
+  font-family: "Trade Gothic Next W01", "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
+  color: white;
+  font-size: 56px;
+  text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-style: normal;
+  line-height: 56px;
+  padding: 0 0 5px 0;
+  margin-bottom: 25px;
+}
+
+.ucr-homepage-hero-video .video-text-area .video-text-button a {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  padding: 11px 23px;
+  background: rgba(0, 0, 0, 0.5);
+  border: solid 1px #fff;
+  -webkit-transition: color 0.5s, background-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s, background-color 0.5s;
+  font-weight: 900;
+  font-family: "Avenir Next W01", "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  min-width: 277px;
+}
