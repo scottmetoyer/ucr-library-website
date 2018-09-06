@@ -796,7 +796,7 @@ $settings['entity_update_batch_size'] = 50;
 // These will be overwritten by Dev Desktop below if we are in a local development environment
 
 $databases = array();
-$config_directories = array();
+//$config_directories = array();
 
 $settings['hash_salt'] = $_SERVER['HASH_SALT'];
 $settings['update_free_access'] = FALSE;
