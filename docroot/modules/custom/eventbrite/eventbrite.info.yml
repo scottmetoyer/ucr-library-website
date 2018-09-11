@@ -1,0 +1,6 @@
+name: Eventbrite
+description: Display a list of Eventbrite events in a block
+package: Custom
+
+type: module
+core: 8.x

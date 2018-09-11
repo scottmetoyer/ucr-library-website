@@ -1,0 +1,7 @@
+eventbrite.content:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\eventbrite\Controller\EventbriteController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
