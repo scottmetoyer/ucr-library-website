@@ -1,0 +1,6 @@
+eventbrite.admin:
+  title: 'Eventbrite module settings'
+  description: 'Configuration for the Eventbrite custom module'
+  parent: system.admin_config_development
+  route_name: eventbrite.content
+  weight: 100
