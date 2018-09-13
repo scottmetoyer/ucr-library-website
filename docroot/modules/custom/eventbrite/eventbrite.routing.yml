@@ -1,13 +1,13 @@
 eventbrite.content:
-  path: '/hello'
+  path: '/about/workshops-events'
   defaults:
     _controller: '\Drupal\eventbrite\Controller\EventbriteController::content'
-    _title: 'Hello World'
+    _title: 'Workshops & Events'
   requirements:
     _permission: 'access content'
 
 eventbrite.settings:
-  path: '/admin/config/development/eventbrite'
+  path: '/admin/config/system/eventbrite'
   defaults:
     _form: '\Drupal\eventbrite\Form\eventbriteSettingsForm'
     _title: 'Eventbrite configuration'

@@ -9,40 +9,46 @@ use Drupal\Core\Controller\ControllerBase;
  */
 class EventbriteController extends ControllerBase
 {
+    private function getEvents()
+    {
+        $json;
+        $config = $this->config('eventbrite.settings');
+        $eventbriteToken = $config->get('oauth_token');
+        $organizationId = $config->get('organization_id');
 
-    /**
-     * Display the markup.
-     *
-     * @return array
-     *   Return markup array.
-     */
-    private function getEvents() {
-        $body;
-        $url = 'https://www.eventbriteapi.com/v3/users/me/?token=PVVY6TKJY7CRARG7NN7K';
-        $method = 'GET';
-        $options = [
-        'form_params' => [
-        ]
-        ];
-        
-        $client = \Drupal::httpClient();
-        
-        $response = $client->request($method, $url, $options);
-        $code = $response->getStatusCode();
-        if ($code == 200) {
-            $body = $response->getBody()->getContents();
+        try {
+            $url = 'https://www.eventbriteapi.com/v3/organizations/' . $organizationId . '/events/?order_by=start_asc&status=live&show_series_parent=true&token=' . $eventbriteToken;
+            $method = 'GET';
+            $options = [
+                'form_params' => [
+                ],
+            ];
+
+            $client = \Drupal::httpClient();
+
+            $response = $client->request($method, $url, $options);
+            $code = $response->getStatusCode();
+            if ($code == 200) {
+                $json = $response->getBody()->getContents();
+            }
+        } catch (\Exception $e) {
+            $json = "{ 'error' : 'Error connecting to Eventbrite.' }";
+            \Drupal::logger('eventbrite')->error($e->getMessage());
         }
 
-        return $body;
+        return $json;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function content()
     {
         $content = $this->getEvents();
 
         return [
-            '#type' => 'markup',
-            '#markup' => $this->t($this->getEvents()),
+            '#theme' => 'events_list_display',
+            '#events' => json_decode($content),
         ];
     }
 
