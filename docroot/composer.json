@@ -6,7 +6,8 @@
     "require": {
         "composer/installers": "^1.0.24",
         "wikimedia/composer-merge-plugin": "^1.4",
-        "drupal/quicktabs": "^3.0@alpha"
+        "drupal/quicktabs": "^3.0@alpha",
+        "drupal/better_exposed_filters": "^3.0@alpha"
     },
     "replace": {
         "drupal/core": "^8.6"
