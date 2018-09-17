@@ -18,6 +18,13 @@ use Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem;
  */
 class BricksTreeItem extends EntityReferenceItem {
 
+  /**
+   * {@inheritdoc}
+   */
+  public static function getPreconfiguredOptions() {
+    return [];
+  }
+
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties = parent::propertyDefinitions($field_definition);
 
