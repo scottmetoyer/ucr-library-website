@@ -1,5 +1,5 @@
 name: Eventbrite
-description: Display a list of Eventbrite events in a block
+description: Display a list of Eventbrite events in a block or on a page
 package: Custom
 
 type: module

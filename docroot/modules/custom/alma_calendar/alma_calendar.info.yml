@@ -1,0 +1,6 @@
+name: Alma Calendar
+description: Display an library's open hours from an Alma calendar on a block or page
+package: Custom
+
+type: module
+core: 8.x

@@ -1,16 +1,17 @@
 <?php
 
-namespace Drupal\eventbrite\Controller;
+namespace Drupal\alma_calendar\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- * Defines EventbriteController class.
+ * Defines AlmaCalendarController class.
  */
-class EventbriteController extends ControllerBase
+class AlmaCalendarController extends ControllerBase
 {
-    private function getEvents()
+    private function getAllHours()
     {
+        /*
         $json;
         $config = $this->config('eventbrite.settings');
         $eventbriteToken = $config->get('oauth_token');
@@ -47,6 +48,7 @@ class EventbriteController extends ControllerBase
         }
 
         return $json;
+        */
     }
 
     /**
@@ -54,11 +56,11 @@ class EventbriteController extends ControllerBase
      */
     public function content()
     {
-        $content = $this->getEvents();
+        $content = $this->getAllHours();
 
         return [
-            '#theme' => 'events_list_display',
-            '#events' => json_decode($content),
+            '#theme' => 'all_hours_display',
+            '#hours' => json_decode($content),
         ];
     }
 

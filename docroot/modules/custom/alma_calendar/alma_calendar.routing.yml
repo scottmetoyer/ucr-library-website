@@ -1,0 +1,15 @@
+alma_calendar.content:
+  path: '/about/hours'
+  defaults:
+    _controller: '\Drupal\alma_calendar\Controller\AlmaCalendarController::content'
+    _title: 'Hours'
+  requirements:
+    _permission: 'access content'
+
+alma_calendar.settings:
+  path: '/admin/config/system/alma_calendar'
+  defaults:
+    _form: '\Drupal\alma_calendar\Form\almaCalendarSettingsForm'
+    _title: 'Alma Calendar configuration'
+  requirements:
+    _permission: 'administer site configuration'

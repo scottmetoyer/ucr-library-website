@@ -1,0 +1,6 @@
+alma_calendar.admin:
+  title: 'Alma Calendar settings'
+  description: 'Configuration for the Alma Calendar custom module'
+  parent: system.admin_config_system
+  route_name: alma_calendar.settings
+  weight: 100
