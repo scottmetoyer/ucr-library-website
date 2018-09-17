@@ -1,0 +1,36 @@
+diff --git a/modules/bricks_revisions/src/Plugin/Field/FieldType/BricksTreeRevisionedItem.php b/modules/bricks_revisions/src/Plugin/Field/FieldType/BricksTreeRevisionedItem.php
+index d522351..dbf9836 100644
+--- a/modules/bricks_revisions/src/Plugin/Field/FieldType/BricksTreeRevisionedItem.php
++++ b/modules/bricks_revisions/src/Plugin/Field/FieldType/BricksTreeRevisionedItem.php
+@@ -18,6 +18,13 @@ use Drupal\entity_reference_revisions\Plugin\Field\FieldType\EntityReferenceRevi
+  */
+ class BricksTreeRevisionedItem extends EntityReferenceRevisionsItem {
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public static function getPreconfiguredOptions() {
++    return [];
++  }
++
+   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
+     $properties = parent::propertyDefinitions($field_definition);
+ 
+diff --git a/src/Plugin/Field/FieldType/BricksTreeItem.php b/src/Plugin/Field/FieldType/BricksTreeItem.php
+index e8fb9f6..a8567c3 100644
+--- a/src/Plugin/Field/FieldType/BricksTreeItem.php
++++ b/src/Plugin/Field/FieldType/BricksTreeItem.php
+@@ -18,6 +18,13 @@ use Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem;
+  */
+ class BricksTreeItem extends EntityReferenceItem {
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public static function getPreconfiguredOptions() {
++    return [];
++  }
++
+   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
+     $properties = parent::propertyDefinitions($field_definition);
+ 
