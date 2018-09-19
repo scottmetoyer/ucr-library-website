@@ -9,46 +9,42 @@ use Drupal\Core\Controller\ControllerBase;
  */
 class AlmaCalendarController extends ControllerBase
 {
-    private function getAllHours()
-    {
-        /*
-        $json;
-        $config = $this->config('eventbrite.settings');
-        $eventbriteToken = $config->get('oauth_token');
-        $organizationId = $config->get('organization_id');
-        
+    private $config;
+    private $apiKey;
+
+    public function __construct() {
+        $this->$config = $this->config('alma_calendar.settings');
+        $this->$apiKey = $this->$config->get('api_key');
+    }
+
+    private function getLibraryHours($libraryCode) {
+        $xml;
+        $cacheName = 'alma_library_hours_'.$libraryCode;
+
         try {
             // Do we have a valid response in the cache? If so, use it. Otherwise, make the web request.
-            $cache = \Drupal::cache()->get('eventbrite_request');
+            $cache = \Drupal::cache()->get($cacheName);
 
             if ($cache) {
-                $json = $cache->data;
+                $xml = $cache->data;
             } else {
-                $url = 'https://www.eventbriteapi.com/v3/organizations/' . $organizationId . '/events/?order_by=start_asc&status=live&show_series_parent=true&token=' . $eventbriteToken;
-                $method = 'GET';
-                $options = [
-                    'form_params' => [
-                    ],
-                ];
-
-                $client = \Drupal::httpClient();
-
-                $response = $client->request($method, $url, $options);
+                $httpClient = \Drupal::httpClient();
+                $url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/'.$libraryCode.'/open-hours?apiKey=' . $this->$apiKey;
+                $response = $httpClient->request('GET', $url, []);
                 $code = $response->getStatusCode();
                 if ($code == 200) {
-                    $json = $response->getBody()->getContents();
+                    $xml = $response->getBody()->getContents();
                 }
-                
-                // Save the response into the cache with a 1 minute expiration
-                \Drupal::cache()->set('eventbrite_request', $json, strtotime("+1 minutes"));
+
+                // Save the response into the cache with a 1 hour expiration
+                \Drupal::cache()->set($cacheName, $json, strtotime("+60 minutes"));
             }
         } catch (\Exception $e) {
-            $json = "{ 'error' : 'Error connecting to Eventbrite.' }";
-            \Drupal::logger('eventbrite')->error($e->getMessage());
+            $xml = "<error>'Error connecting to Alma.</error>";
+            \Drupal::logger('alma')->error($e->getMessage());
         }
 
-        return $json;
-        */
+        return $xml;
     }
 
     /**
@@ -56,11 +52,18 @@ class AlmaCalendarController extends ControllerBase
      */
     public function content()
     {
-        $content = $this->getAllHours();
+        // Fetch each libraries hours individually
+        $orbachHours = $this->getLibraryHours('ORBACH');
+        $scuaHours  = $this->getLibraryHours('SPECIALCOL');
+        $musicHours  = $this->getLibraryHours('MUSIC');
+        $riveraHours  = $this->getLibraryHours('RIVERA');
 
         return [
             '#theme' => 'all_hours_display',
-            '#hours' => json_decode($content),
+            '#orbach' => simplexml_load_string($orbachHours),
+            '#scua' => simplexml_load_string($scuaHours),
+            '#music' => simplexml_load_string($musicHours),
+            '#rivera' => simplexml_load_string($riveraHours)
         ];
     }
 

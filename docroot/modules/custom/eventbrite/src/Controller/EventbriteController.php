@@ -15,7 +15,7 @@ class EventbriteController extends ControllerBase
         $config = $this->config('eventbrite.settings');
         $eventbriteToken = $config->get('oauth_token');
         $organizationId = $config->get('organization_id');
-        
+
         try {
             // Do we have a valid response in the cache? If so, use it. Otherwise, make the web request.
             $cache = \Drupal::cache()->get('eventbrite_request');
@@ -37,9 +37,9 @@ class EventbriteController extends ControllerBase
                 if ($code == 200) {
                     $json = $response->getBody()->getContents();
                 }
-                
-                // Save the response into the cache with a 1 minute expiration
-                \Drupal::cache()->set('eventbrite_request', $json, strtotime("+1 minutes"));
+
+                // Save the response into the cache with a 1 hour expiration
+                \Drupal::cache()->set('eventbrite_request', $json, strtotime("+60 minutes"));
             }
         } catch (\Exception $e) {
             $json = "{ 'error' : 'Error connecting to Eventbrite.' }";

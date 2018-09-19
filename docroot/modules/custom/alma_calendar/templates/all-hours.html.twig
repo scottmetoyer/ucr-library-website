@@ -1,29 +1,44 @@
 {#
 /**
  * @file
- * Default theme implementation to display a list of Eventbrite events.
+ * Default theme implementation to display a list of Alma calendar records.
  *
  * Available variables:
- *   - events
+ *   - records
  *
  * @ingroup themeable
  */
 #}
-<div class="event-list">
-    {% for event in events.events %}
-        <img src="{{ event.logo.url }}" alt="{{ event.name.text }}"/>
-        <h4>{{ event.name.text }}</h4>
+<div class="hours-list">
+    <h4>Orbach</h4>
+    {% for day in orbach.day %}
+        {{ day.date }}<br>
+        {% for hour in day.hours %}
+        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
+        {% endfor %}
+    {% endfor %}
 
-        {% if event.is_series %}
-        <strong>Multiple events</strong>
-        {% endif %}
-        <p>{{ event.start.local }}
-            -
-            {{ event.end.local }}</p>
-        <p>
-            <a target="_blank" href="{{ event.url }}">RSVP</a>
-        </p>
-        <p>{{ event.description.text }}</p>
-        <hr>
+    <h4>Rivera</h4>
+    {% for day in orbach.day %}
+        {{ day.date }}<br>
+        {% for hour in day.hours %}
+        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
+        {% endfor %}
+    {% endfor %}
+
+    <h4>Music</h4>
+   {% for day in orbach.day %}
+        {{ day.date }}<br>
+        {% for hour in day.hours %}
+        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
+        {% endfor %}
+    {% endfor %}
+
+    <h4>Special Collections</h4>
+    {% for day in orbach.day %}
+        {{ day.date }}<br>
+        {% for hour in day.hours %}
+        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
+        {% endfor %}
     {% endfor %}
 </div>
