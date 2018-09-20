@@ -20,12 +20,12 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-rivera" role="tabpanel" aria-labelledby="nav-rivera-tab">
-        <table class="table">
+        <table class="table hours">
             {% for day in rivera.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <th scope="col">
-                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
-                    </th>
+                    <td scope="col">
+                        {{ rivera.day[loop.index0].date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
+                    </td>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}
@@ -38,12 +38,12 @@
         </table>
     </div>
     <div class="tab-pane fade" id="nav-orbach" role="tabpanel" aria-labelledby="nav-orbach-tab">
-        <table class="table">
+        <table class="table hours">
             {% for day in orbach.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <th scope="col">
-                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
-                    </th>
+                    <td scope="col">
+                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
+                    </td>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}
@@ -56,12 +56,12 @@
         </table>
     </div>
     <div class="tab-pane fade" id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab">
-        <table class="table">
+        <table class="table hours">
             {% for day in music.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <th scope="col">
-                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
-                    </th>
+                    <td scope="col">
+                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
+                    </td>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}
@@ -74,12 +74,12 @@
         </table>
     </div>
     <div class="tab-pane fade" id="nav-scua" role="tabpanel" aria-labelledby="nav-scua-tab">
-        <table class="table">
+        <table class="table hours">
             {% for day in scua.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <th scope="col">
-                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
-                    </th>
+                    <td scope="col">
+                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
+                    </td>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}

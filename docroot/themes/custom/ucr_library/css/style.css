@@ -458,3 +458,11 @@ ul.links li a:hover {
 .nav-tabs .nav-link {
   border-radius: 0;
 }
+
+.hours tr {
+  background-color: #fff;
+}
+
+.hours td {
+  border: solid 1px #dee2e6;
+}
