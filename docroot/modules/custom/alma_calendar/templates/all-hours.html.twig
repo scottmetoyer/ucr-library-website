@@ -9,36 +9,86 @@
  * @ingroup themeable
  */
 #}
-<div class="hours-list">
-    <h4>Orbach</h4>
-    {% for day in orbach.day %}
-        {{ day.date }}<br>
-        {% for hour in day.hours %}
-        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
-        {% endfor %}
-    {% endfor %}
 
-    <h4>Rivera</h4>
-    {% for day in orbach.day %}
-        {{ day.date }}<br>
-        {% for hour in day.hours %}
-        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
-        {% endfor %}
-    {% endfor %}
-
-    <h4>Music</h4>
-   {% for day in orbach.day %}
-        {{ day.date }}<br>
-        {% for hour in day.hours %}
-        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
-        {% endfor %}
-    {% endfor %}
-
-    <h4>Special Collections</h4>
-    {% for day in orbach.day %}
-        {{ day.date }}<br>
-        {% for hour in day.hours %}
-        From:{{ hour.hour.from }} To:{{ hour.hour.to }}<br>
-        {% endfor %}
-    {% endfor %}
+<nav>
+    <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-rivera-tab" data-toggle="tab" href="#nav-rivera" role="tab" aria-controls="nav-rivera" aria-selected="true">Tomás Rivera Library</a>
+        <a class="nav-item nav-link" id="nav-orbach-tab" data-toggle="tab" href="#nav-orbach" role="tab" aria-controls="nav-orbach" aria-selected="false">Orbach Science Library</a>
+        <a class="nav-item nav-link" id="nav-music-tab" data-toggle="tab" href="#nav-music" role="tab" aria-controls="nav-music" aria-selected="false">Music Library</a>
+        <a class="nav-item nav-link" id="nav-scua-tab" data-toggle="tab" href="#nav-scua" role="tab" aria-controls="nav-scua" aria-selected="false">Special Collections &amp; University Archives</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-rivera" role="tabpanel" aria-labelledby="nav-rivera-tab">
+        <table>
+            {% for day in rivera.day %}
+                <tr>
+                    <td>
+                        {{ day.date }}
+                    </td>
+                    {% for hour in day.hours %}
+                        <td>
+                            {{ hour.hour.from }}
+                            -
+                            {{ hour.hour.to }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="tab-pane fade" id="nav-orbach" role="tabpanel" aria-labelledby="nav-orbach-tab">
+        <table>
+            {% for day in orbach.day %}
+                <tr>
+                    <td>
+                        {{ day.date }}
+                    </td>
+                    {% for hour in day.hours %}
+                        <td>
+                            {{ hour.hour.from }}
+                            -
+                            {{ hour.hour.to }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="tab-pane fade" id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab">
+        <table>
+            {% for day in music.day %}
+                <tr>
+                    <td>
+                        {{ day.date }}
+                    </td>
+                    {% for hour in day.hours %}
+                        <td>
+                            {{ hour.hour.from }}
+                            -
+                            {{ hour.hour.to }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="tab-pane fade" id="nav-scua" role="tabpanel" aria-labelledby="nav-scua-tab">
+        <table>
+            {% for day in scua.day %}
+                <tr>
+                    <td>
+                        {{ day.date }}
+                    </td>
+                    {% for hour in day.hours %}
+                        <td>
+                            {{ hour.hour.from }}
+                            -
+                            {{ hour.hour.to }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 </div>
