@@ -20,12 +20,12 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-rivera" role="tabpanel" aria-labelledby="nav-rivera-tab">
-        <table>
+        <table class="table">
             {% for day in rivera.day %}
-                <tr>
-                    <td>
+                <tr {% if loop.first %} class="table-success" {% endif %}>
+                    <th scope="col">
                         {{ day.date }}
-                    </td>
+                    </th>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}
@@ -38,12 +38,12 @@
         </table>
     </div>
     <div class="tab-pane fade" id="nav-orbach" role="tabpanel" aria-labelledby="nav-orbach-tab">
-        <table>
+        <table class="table">
             {% for day in orbach.day %}
-                <tr>
-                    <td>
+                <tr {% if loop.first %} class="table-success" {% endif %}>
+                    <th scope="col">
                         {{ day.date }}
-                    </td>
+                    </th>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}
@@ -56,12 +56,12 @@
         </table>
     </div>
     <div class="tab-pane fade" id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab">
-        <table>
+        <table class="table">
             {% for day in music.day %}
-                <tr>
-                    <td>
+                <tr {% if loop.first %} class="table-success" {% endif %}>
+                    <th scope="col">
                         {{ day.date }}
-                    </td>
+                    </th>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}
@@ -74,12 +74,12 @@
         </table>
     </div>
     <div class="tab-pane fade" id="nav-scua" role="tabpanel" aria-labelledby="nav-scua-tab">
-        <table>
+        <table class="table">
             {% for day in scua.day %}
-                <tr>
-                    <td>
+                <tr {% if loop.first %} class="table-success" {% endif %}>
+                    <th scope="col">
                         {{ day.date }}
-                    </td>
+                    </th>
                     {% for hour in day.hours %}
                         <td>
                             {{ hour.hour.from }}
