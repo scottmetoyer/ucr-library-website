@@ -24,7 +24,7 @@
             {% for day in rivera.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
                     <th scope="col">
-                        {{ day.date }}
+                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
                     </th>
                     {% for hour in day.hours %}
                         <td>
@@ -42,7 +42,7 @@
             {% for day in orbach.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
                     <th scope="col">
-                        {{ day.date }}
+                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
                     </th>
                     {% for hour in day.hours %}
                         <td>
@@ -60,7 +60,7 @@
             {% for day in music.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
                     <th scope="col">
-                        {{ day.date }}
+                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
                     </th>
                     {% for hour in day.hours %}
                         <td>
@@ -78,7 +78,7 @@
             {% for day in scua.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
                     <th scope="col">
-                        {{ day.date }}
+                        {{ day.day_of_week.attributes.desc }} ({{ day.date }})
                     </th>
                     {% for hour in day.hours %}
                         <td>

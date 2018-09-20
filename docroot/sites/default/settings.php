@@ -835,3 +835,14 @@ if (isset($_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR']) && file_exists($_SERVER['D
 }
 // </DDSETTINGS>
 $settings['install_profile'] = 'standard';
+
+$settings['twig_sandbox_whitelisted_methods'] = [
+  'id',
+  'label',
+  'bundle',
+  'get',
+  '__toString',
+  'toString',
+  'referencedEntities',
+  'attributes'
+];

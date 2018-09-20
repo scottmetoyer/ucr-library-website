@@ -9,17 +9,11 @@ use Drupal\Core\Controller\ControllerBase;
  */
 class AlmaCalendarController extends ControllerBase
 {
-    private $config;
-    private $apiKey;
-
-    public function __construct() {
-        $this->$config = $this->config('alma_calendar.settings');
-        $this->$apiKey = $this->$config->get('api_key');
-    }
-
     private function getLibraryHours($libraryCode) {
         $xml;
         $cacheName = 'alma_library_hours_'.$libraryCode;
+        $config = $this->config('alma_calendar.settings');
+        $apiKey = $config->get('api_key');
 
         try {
             // Do we have a valid response in the cache? If so, use it. Otherwise, make the web request.
@@ -29,7 +23,7 @@ class AlmaCalendarController extends ControllerBase
                 $xml = $cache->data;
             } else {
                 $httpClient = \Drupal::httpClient();
-                $url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/'.$libraryCode.'/open-hours?apiKey=' . $this->$apiKey;
+                $url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/libraries/'.$libraryCode.'/open-hours?apiKey=' . $apiKey;
                 $response = $httpClient->request('GET', $url, []);
                 $code = $response->getStatusCode();
                 if ($code == 200) {
@@ -37,7 +31,7 @@ class AlmaCalendarController extends ControllerBase
                 }
 
                 // Save the response into the cache with a 1 hour expiration
-                \Drupal::cache()->set($cacheName, $json, strtotime("+60 minutes"));
+                \Drupal::cache()->set($cacheName, $xml, strtotime("+60 minutes"));
             }
         } catch (\Exception $e) {
             $xml = "<error>'Error connecting to Alma.</error>";
