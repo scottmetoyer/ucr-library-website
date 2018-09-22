@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display today's hours for a library
+ *
+ * Available variables:
+ *   - library_code
+ *
+ * @ingroup themeable
+ */
+#}
+
+ <a href="">Today's hours<span class="badge align-middle {% if is_open %} badge-success {% else %} badge-danger {% endif %}">{{ hours }}</span></a>

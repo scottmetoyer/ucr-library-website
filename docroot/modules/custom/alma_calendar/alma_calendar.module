@@ -1,15 +1,31 @@
 <?php
 
-function alma_calendar_theme($existing, $type, $theme, $path) {
+function alma_calendar_theme($existing, $type, $theme, $path)
+{
     return array(
         'all_hours_display' => array(
             'variables' => array(
-                'orbach' => NULL,
-                'scua' => NULL,
-                'rivera' => NULL,
-                'music' => NULL
+                'orbach' => null,
+                'scua' => null,
+                'rivera' => null,
+                'music' => null,
             ),
             'template' => 'all-hours',
+        ),
+
+        'today_hours_display' => array(
+            'variables' => array(
+                'is_open' => null,
+                'hours' => null,
+            ),
+            'template' => 'today-hours',
+        ),
+
+        'library_calendar_display' => array(
+            'variables' => array(
+                'hours' => null,
+            ),
+            'template' => 'library-calendar',
         ),
     );
 }

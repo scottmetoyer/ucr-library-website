@@ -24,7 +24,7 @@
             {% for day in rivera.day %}
                 <tr {% if loop.first %} class="table-success" {% endif %}>
                     <td scope="col">
-                        {{ rivera.day[loop.index0].date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
+                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
                     </td>
                     {% for hour in day.hours %}
                         <td>
