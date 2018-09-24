@@ -20,75 +20,174 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-rivera" role="tabpanel" aria-labelledby="nav-rivera-tab">
-        <table class="table hours">
-            {% for day in rivera.day %}
-                <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <td scope="col">
-                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
-                    </td>
-                    {% for hour in day.hours %}
-                        <td>
-                            {{ hour.hour.from }}
-                            -
-                            {{ hour.hour.to }}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </table>
+        <div class="row">
+            <!-- Tomás Rivera Library -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Tomás Rivera Library
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for day in rivera.day %}
+                            <li class="list-group-item {% if loop.first %}bg-success{% endif %}">
+                                <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
+                                <span class="float-lg-right">
+                                    {% for hour in day.hours %}
+                                        <td>
+                                            {{ hour.hour.from | date('g:ia') }}
+                                            -
+                                            {{ hour.hour.to | date('g:ia') }}
+                                        </td>
+                                    {% endfor %}
+                                </span>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Tomás Rivera Library -->
+
+            <!-- Library Administration -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Library Administration
+                    </div>
+                    <ul class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+            <!-- End Library Administration -->
+
+            <!-- Research Services Rivera -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Research Services Rivera
+                    </div>
+                    <ul class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+            <!-- End Research Services Rivera -->
+        </div>
     </div>
     <div class="tab-pane fade" id="nav-orbach" role="tabpanel" aria-labelledby="nav-orbach-tab">
-        <table class="table hours">
-            {% for day in orbach.day %}
-                <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <td scope="col">
-                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
-                    </td>
-                    {% for hour in day.hours %}
-                        <td>
-                            {{ hour.hour.from }}
-                            -
-                            {{ hour.hour.to }}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </table>
+        <div class="row">
+            <!-- Orbach Science Library -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Orbach Science Library
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for day in orbach.day %}
+                            <li class="list-group-item {% if loop.first %}bg-success{% endif %}">
+                                <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
+                                <span class="float-lg-right">
+                                    {% for hour in day.hours %}
+                                        <td>
+                                            {{ hour.hour.from | date('g:ia') }}
+                                            -
+                                            {{ hour.hour.to | date('g:ia') }}
+                                        </td>
+                                    {% endfor %}
+                                </span>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Orbach Science Library -->
+
+            <!-- Map Services -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Map Services
+                    </div>
+                    <ul class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+            <!-- Map Services -->
+
+            <!-- Research Services OSL -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Research Services OSL
+                    </div>
+                    <ul class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+            <!-- End Research Services OSL -->
+
+            <!-- Creat'R Lab -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Creat'R Lab
+                    </div>
+                    <ul class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+            <!-- Creat'R Lab -->
+        </div>
     </div>
     <div class="tab-pane fade" id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab">
-        <table class="table hours">
-            {% for day in music.day %}
-                <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <td scope="col">
-                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
-                    </td>
-                    {% for hour in day.hours %}
-                        <td>
-                            {{ hour.hour.from }}
-                            -
-                            {{ hour.hour.to }}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </table>
+        <div class="row">
+            <!-- Music Library -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Music Library
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for day in music.day %}
+                            <li class="list-group-item {% if loop.first %}bg-success{% endif %}">
+                                <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
+                                <span class="float-lg-right">
+                                    {% for hour in day.hours %}
+                                        <td>
+                                            {{ hour.hour.from | date('g:ia') }}
+                                            -
+                                            {{ hour.hour.to | date('g:ia') }}
+                                        </td>
+                                    {% endfor %}
+                                </span>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Music Library -->
+        </div>
     </div>
     <div class="tab-pane fade" id="nav-scua" role="tabpanel" aria-labelledby="nav-scua-tab">
-        <table class="table hours">
-            {% for day in scua.day %}
-                <tr {% if loop.first %} class="table-success" {% endif %}>
-                    <td scope="col">
-                        {{ day.date | date('m-d') }}&nbsp;|&nbsp;<strong>{{ day.day_of_week.attributes.desc }}</strong>
-                    </td>
-                    {% for hour in day.hours %}
-                        <td>
-                            {{ hour.hour.from }}
-                            -
-                            {{ hour.hour.to }}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </table>
+        <div class="row">
+            <!-- Special Collections & University Archives -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Special Collections &amp; University Archives
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% for day in scua.day %}
+                            <li class="list-group-item {% if loop.first %}bg-success{% endif %}">
+                                <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
+                                <span class="float-lg-right">
+                                    {% for hour in day.hours %}
+                                        <td>
+                                            {{ hour.hour.from | date('g:ia') }}
+                                            -
+                                            {{ hour.hour.to | date('g:ia') }}
+                                        </td>
+                                    {% endfor %}
+                                </span>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Special Collections & University Archives -->
+        </div>
     </div>
 </div>

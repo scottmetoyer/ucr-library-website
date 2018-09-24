@@ -341,6 +341,10 @@ ul.links li a:hover {
   position: relative;
 }
 
+.bg-success {
+  background-color: #d4edda!important;
+}
+
 .caption {
   position: absolute;
   bottom: 20px;
@@ -361,6 +365,9 @@ ul.links li a:hover {
   margin-top: 1em;
   padding-top: 0;
   border-radius: 0;
+}
+
+.card.library {
   border: 0;
 }
 
