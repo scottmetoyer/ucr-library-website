@@ -33,11 +33,13 @@
                                 <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
                                 <span class="float-lg-right">
                                     {% for hour in day.hours %}
-                                        <td>
+                                        {% if hour %}
                                             {{ hour.hour.from | date('g:ia') }}
                                             -
                                             {{ hour.hour.to | date('g:ia') }}
-                                        </td>
+                                        {% else %}
+                                            CLOSED
+                                        {% endif %}
                                     {% endfor %}
                                 </span>
                             {% endfor %}
@@ -84,11 +86,13 @@
                                 <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
                                 <span class="float-lg-right">
                                     {% for hour in day.hours %}
-                                        <td>
+                                        {% if hour %}
                                             {{ hour.hour.from | date('g:ia') }}
                                             -
                                             {{ hour.hour.to | date('g:ia') }}
-                                        </td>
+                                        {% else %}
+                                            CLOSED
+                                        {% endif %}
                                     {% endfor %}
                                 </span>
                             {% endfor %}
@@ -146,11 +150,13 @@
                                 <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
                                 <span class="float-lg-right">
                                     {% for hour in day.hours %}
-                                        <td>
+                                        {% if hour %}
                                             {{ hour.hour.from | date('g:ia') }}
                                             -
                                             {{ hour.hour.to | date('g:ia') }}
-                                        </td>
+                                        {% else %}
+                                            CLOSED
+                                        {% endif %}
                                     {% endfor %}
                                 </span>
                             {% endfor %}
@@ -175,11 +181,13 @@
                                 <strong>{{ day.day_of_week.attributes.desc }}</strong>&nbsp;{{ day.date | date('n-j') }}
                                 <span class="float-lg-right">
                                     {% for hour in day.hours %}
-                                        <td>
+                                        {% if hour %}
                                             {{ hour.hour.from | date('g:ia') }}
                                             -
                                             {{ hour.hour.to | date('g:ia') }}
-                                        </td>
+                                        {% else %}
+                                            CLOSED
+                                        {% endif %}
                                     {% endfor %}
                                 </span>
                             {% endfor %}
