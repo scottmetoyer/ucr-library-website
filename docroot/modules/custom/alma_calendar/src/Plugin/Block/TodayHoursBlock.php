@@ -77,6 +77,8 @@ class TodayHoursBlock extends BlockBase implements BlockPluginInterface
             if ($now > $open && $now < $close) {
                 $hourString = date('g:ia', $open) . ' - ' . date('g:ia', $close);
                 $isOpen = true;
+            } else {
+                $hourString = $hourString . ' - open at ' . date('ga', $open);
             }
         }
 

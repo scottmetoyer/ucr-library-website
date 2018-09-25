@@ -342,7 +342,7 @@ ul.links li a:hover {
 }
 
 .bg-success {
-  background-color: #d4edda!important;
+  background-color: #d4edda !important;
 }
 
 .caption {
@@ -372,17 +372,17 @@ ul.links li a:hover {
 }
 
 .card img {
-    width:100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
-.card-body {
+.card.library .card-body {
   padding: .75em;
   font-size: 13px;
   text-transform: none;
 }
 
-.card-body p {
+.card.library .card-body p {
   color: #68696b;
   font-style: italic;
 }
@@ -439,7 +439,8 @@ ul.links li a:hover {
   margin-top: 0;
 }
 
-.field--type-image img, .field--name-field-user-picture img {
+.field--type-image img,
+.field--name-field-user-picture img {
   margin: 0;
 }
 
@@ -466,10 +467,11 @@ ul.links li a:hover {
   border-radius: 0;
 }
 
-.hours tr {
-  background-color: #fff;
+.hours .card-header {
+  border-top: 8px solid #f1ab00;
+  border-radius: 0;
 }
 
-.hours td {
-  border: solid 1px #dee2e6;
+.hours.card {
+  border:0;
 }
