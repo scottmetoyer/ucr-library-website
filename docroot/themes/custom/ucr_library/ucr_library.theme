@@ -5,41 +5,46 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
-use Drupal\Core\Template\Attribute;
-use Drupal\Core\Link;
-use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
-
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
  * Replace Barrio setting options with subtheme ones.
- * 
+ *
  * Example on how to alter theme settings form
- * 
+ *
  */
-function ucr_library_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-      'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
-      'bg-light' => t('Light'),
-      'bg-dark' => t('Dark'),
-      'bg-white' => t('White'),
-      'bg-transparent' => t('Transparent'),
-  );
-  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
-      'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
-      'bg-light' => t('Light'),
-      'bg-dark' => t('Dark'),
-      'bg-white' => t('White'),
-      'bg-transparent' => t('Transparent'),
-  );
+function ucr_library_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
+{
+    $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+        'bg-primary' => t('Primary'),
+        'bg-secondary' => t('Secondary'),
+        'bg-light' => t('Light'),
+        'bg-dark' => t('Dark'),
+        'bg-white' => t('White'),
+        'bg-transparent' => t('Transparent'),
+    );
+    $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+        'bg-primary' => t('Primary'),
+        'bg-secondary' => t('Secondary'),
+        'bg-light' => t('Light'),
+        'bg-dark' => t('Dark'),
+        'bg-white' => t('White'),
+        'bg-transparent' => t('Transparent'),
+    );
 }
 
-function ucr_library_preprocess_page(&$variables) {
+/**
+ * Replace the Search Submit Button with a Font Awesome Character.
+ */
+function ucr_library_form_search_block_form_alter(&$form, &$form_state)
+{
+    $form['keys']['#attributes']['placeholder'][] = t('Search catalog, website & more...');
+    $form['actions']['submit']['#value'] = html_entity_decode('&#xf002;');
+    $form['actions']['submit']['#attributes']['class'][] = 'search-button';
 }
 
-
-
+function ucr_library_preprocess_page(&$variables)
+{
+}

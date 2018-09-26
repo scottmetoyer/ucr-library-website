@@ -56,14 +56,9 @@ a {
   -moz-osx-font-smoothing: greyscale;
 }
 
-#navbar-top {
-  border-bottom: 1px solid #c6c6c6;
-  font-size: medium;
-  padding: 0;
-}
-
-#navbar-top a.navlink {
-  color: #8d8d8d;
+#container {
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 @media (min-width: 1200px) {
@@ -220,90 +215,7 @@ h3 {
   display: block;
 }
 
-/* Mega width dropdown */
-.navbar .dropdown-menu div[class*="col"] {
-  margin-bottom: 1rem;
-}
 
-.navbar.bg-primary {
-  border: none;
-}
-
-/* breakpoint and up - mega dropdown styles */
-@media screen and (min-width: 992px) {
-
-  /* remove the padding from the navbar so the dropdown hover state is not broken */
-  .navbar {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
-  .navbar .nav-item {
-    padding: .25rem;
-  }
-
-  .navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-  }
-
-  /* makes the dropdown full width  */
-  .navbar .dropdown {
-    position: static;
-  }
-
-  .navbar .dropdown-menu {
-    width: 100%;
-    left: 0;
-    right: 0;
-  }
-
-  /* shows the dropdown menu on hover */
-  .navbar .dropdown:hover .dropdown-menu,
-  .navbar .dropdown .dropdown-menu:hover {
-    display: block !important;
-  }
-
-  .navbar .dropdown-menu {
-    border: 0;
-    background-color: #1b3456;
-    opacity: 1;
-    border-radius: 0;
-    margin: 0;
-    top: 50px;
-  }
-}
-
-#navbar-main {
-  text-transform: uppercase;
-}
-
-#navbar-main a.navlink {
-  color: #fff;
-}
-
-#navbar-main .nav-link {
-  border-left: solid 1px #86BAFF;
-  padding-left: 1em;
-  padding-right: 1em;
-  line-height: .75em;
-  margin-top: .5em;
-  margin-bottom: .5em;
-}
-
-#navbar-main .sub-section .nav-item {
-  padding-bottom: 1em;
-  padding-top: 1em;
-  border-bottom: solid 1px #486E9D;
-  padding-left: 0;
-}
-
-#navbar-main .sub-section a {
-  padding-right: 1em;
-  line-height: .75em;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  color: #fff;
-}
 
 .badge {
   border-radius: 0;
@@ -314,19 +226,7 @@ h3 {
   text-decoration: none;
 }
 
-#navbar-main .sub-section a:hover {
-  color: #b8b8b8;
-  text-decoration: none;
-}
 
-.navbar-brand {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-nav.contextual-region {
-  position: static;
-}
 
 #main-wrapper {
   padding-top: 0;
@@ -510,4 +410,32 @@ ul.links li a:hover {
 
 .hours.card {
   border: 0;
+}
+
+.brick {
+  margin-bottom: 1em;
+}
+
+.brick .card-header {
+  text-transform: uppercase;
+}
+
+.brick ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.brick.find li {
+  width: 47%;
+  float: left;
+}
+
+.brick.find li :nth-child(2n+2) {
+  margin-left: 53;
+  margin-right: -100%; 
+}
+
+.brick img {
+  width: auto;
 }
