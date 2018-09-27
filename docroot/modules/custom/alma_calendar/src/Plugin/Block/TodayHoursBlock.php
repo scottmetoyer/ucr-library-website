@@ -41,8 +41,8 @@ class TodayHoursBlock extends BlockBase implements BlockPluginInterface
                     $xml = $response->getBody()->getContents();
                 }
 
-                // Save the response into the cache with a 1 hour expiration
-                \Drupal::cache()->set($cacheName, $xml, strtotime("+1 minutes"));
+                // Save the response into the cache with a 10 minute expiration
+                \Drupal::cache()->set($cacheName, $xml, strtotime("+10 minutes"));
             }
         } catch (\Exception $e) {
             $xml = "<error>'Error connecting to Alma.</error>";
@@ -50,6 +50,14 @@ class TodayHoursBlock extends BlockBase implements BlockPluginInterface
         }
 
         return $xml;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheMaxAge()
+    {
+        return 0;
     }
 
     /**

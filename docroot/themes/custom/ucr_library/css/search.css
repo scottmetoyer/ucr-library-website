@@ -46,3 +46,7 @@ header #search-block-form {
   display: inline;
   font-weight: 700;
 }
+
+#edit-keys {
+    width: 250px;
+}

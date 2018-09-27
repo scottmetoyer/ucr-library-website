@@ -36,7 +36,7 @@ function ucr_library_form_system_theme_settings_alter(&$form, FormStateInterface
 }
 
 /**
- * Replace the Search Submit Button with a Font Awesome Character.
+ * Replace the Search Submit Button with a Font Awesome search icon
  */
 function ucr_library_form_search_block_form_alter(&$form, &$form_state)
 {
@@ -47,4 +47,5 @@ function ucr_library_form_search_block_form_alter(&$form, &$form_state)
 
 function ucr_library_preprocess_page(&$variables)
 {
+
 }
