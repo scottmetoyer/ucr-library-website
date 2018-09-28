@@ -15,33 +15,43 @@ use Drupal\Core\Form\FormStateInterface;
  *   category = @Translation("External integration"),
  * )
  */
-class EventbriteListBlock extends BlockBase implements BlockPluginInterface {
+class EventbriteListBlock extends BlockBase implements BlockPluginInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheMaxAge()
+    {
+        return 0;
+    }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
-    return array(
-      '#markup' => $this->t('Hello, World!'),
-    );
-  }
+    /**
+     * {@inheritdoc}
+     */
+    public function build()
+    {
+        return array(
+            '#markup' => $this->t('Hello, World!'),
+        );
+    }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form = parent::blockForm($form, $form_state);
+    /**
+     * {@inheritdoc}
+     */
+    public function blockForm($form, FormStateInterface $form_state)
+    {
+        $form = parent::blockForm($form, $form_state);
 
-    $config = $this->getConfiguration();
+        $config = $this->getConfiguration();
 
-    $form['eventbrite_block_name'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Who'),
-      '#description' => $this->t('Who do you want to say hello to?'),
-      '#default_value' => isset($config['eventbrite_block_name']) ? $config['eventbrite_block_name'] : '',
-    ];
+        $form['eventbrite_block_name'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('Who'),
+            '#description' => $this->t('Who do you want to say hello to?'),
+            '#default_value' => isset($config['eventbrite_block_name']) ? $config['eventbrite_block_name'] : '',
+        ];
 
-    return $form;
-  }
+        return $form;
+    }
 
 }

@@ -8,5 +8,11 @@ function eventbrite_theme($existing, $type, $theme, $path) {
             ),
             'template' => 'events-list',
         ),
+        'events_carousel_display' => array(
+            'variables' => array(
+                'events' => NULL
+            ),
+            'template' => 'events-carousel',
+        ),
     );
 }
