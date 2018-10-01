@@ -44,8 +44,3 @@ function ucr_library_form_search_block_form_alter(&$form, &$form_state)
     $form['actions']['submit']['#value'] = html_entity_decode('&#xf002;');
     $form['actions']['submit']['#attributes']['class'][] = 'search-button';
 }
-
-function ucr_library_preprocess_page(&$variables)
-{
-
-}
