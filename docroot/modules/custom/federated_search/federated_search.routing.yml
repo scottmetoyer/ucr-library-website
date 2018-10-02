@@ -1,0 +1,7 @@
+federated_search.settings:
+  path: '/admin/config/system/federated_search'
+  defaults:
+    _form: '\Drupal\federated_search\Form\federatedSearchSettingsForm'
+    _title: 'Federated search configuration'
+  requirements:
+    _permission: 'administer site configuration'

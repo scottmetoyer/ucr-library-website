@@ -43,10 +43,21 @@ header #search-block-form {
   color: #fff !important;
   background-color: #f1ab00;
   border: solid 1px #f1ab00;
-  display: inline;
   font-weight: 700;
+  height: 45px;
 }
 
 #edit-keys {
-    width: 250px;
+  width: 250px;
 }
+
+header #search-block-form {
+  padding: 0;
+  flex-flow: row wrap;
+}
+
+.js-form-type-search input {
+  height: 45px;
+  border-bottom: 0;
+}
+

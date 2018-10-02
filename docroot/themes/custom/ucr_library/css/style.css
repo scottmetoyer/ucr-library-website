@@ -3,8 +3,20 @@
  * Subtheme specific CSS.
  */
 .bg-primary {
-  background-color: #2D6CC0 !important;
+  background-color: #2D6CC0!important;
 }
+
+.btn-primary {
+  background-color: #2D6CC0;
+  border-radius: 0;
+}
+
+.btn-outline-primary {
+  border: solid 1px #2D6CC0;
+  color: #2D6CC0;
+  border-radius: 0;
+}
+
 
 body {
   font-size: 15px;

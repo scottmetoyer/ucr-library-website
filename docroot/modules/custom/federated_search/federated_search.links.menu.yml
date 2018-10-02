@@ -1,0 +1,6 @@
+federated_search.admin:
+  title: 'Federated Search settings'
+  description: 'Configuration for the Federated Search custom module'
+  parent: system.admin_config_system
+  route_name: federated_search.settings
+  weight: 100

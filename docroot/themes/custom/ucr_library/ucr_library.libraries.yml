@@ -11,3 +11,4 @@ global-styling:
       css/hero-video.css: {}
       css/footer.css: {}
       css/search.css: {}
+      css/homepage.css: {}

@@ -1,0 +1,6 @@
+name: Federated Search
+description: Enables querying of multiple external data sets from a single search box
+package: Custom
+
+type: module
+core: 8.x
