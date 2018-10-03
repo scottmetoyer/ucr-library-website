@@ -3,12 +3,13 @@
  * Subtheme specific CSS.
  */
 .bg-primary {
-  background-color: #2D6CC0!important;
+  background-color: #2D6CC0 !important;
 }
 
 .btn-primary {
   background-color: #2D6CC0;
   border-radius: 0;
+  border-color: #2D6CC0;
 }
 
 .btn-outline-primary {
@@ -445,9 +446,10 @@ ul.links li a:hover {
 
 .brick.find li :nth-child(2n+2) {
   margin-left: 53;
-  margin-right: -100%; 
+  margin-right: -100%;
 }
 
 .brick img {
   width: auto;
 }
+

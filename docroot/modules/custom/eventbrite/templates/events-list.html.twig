@@ -9,21 +9,25 @@
  * @ingroup themeable
  */
 #}
-<div class="event-list">
+<div class="row">
     {% for event in events.events %}
-        <img src="{{ event.logo.url }}" alt="{{ event.name.text }}"/>
-        <h4>{{ event.name.text }}</h4>
-
-        {% if event.is_series %}
-            <strong>Multiple events</strong>
-        {% endif %}
-        <p>{{ event.start.local }}
-            -
-            {{ event.end.local }}</p>
-        <p>
-            <a target="_blank" href="{{ event.url }}">RSVP</a>
-        </p>
-        <p>{{ event.description.text }}</p>
-        <hr>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ event.logo.url }}" alt="{{ event.name.text }}"/>
+                <div class="card-body">
+                    <h4>{{ event.name.text }}</h4>
+                    <p class="card-text summary">{{ event.description.text|length > 250 ? event.description.text|slice(0, 250) ~ '...' : event.description.text }}
+                        <a target="_blank" href="{{ event.url }}">Read more</a>
+                    </p>
+                    {% if event.is_series %}
+                        <span class="badge badge-info">Multiple events</span>
+                    {% endif %}
+                    <p>{{ event.start.local | date() }}
+                        -
+                        {{ event.end.local | date() }}</p>
+                    <a target="_blank" href="{{ event.url }}" class="btn btn-primary">RSVP</a>
+                </div>
+            </div>
+        </div>
     {% endfor %}
 </div>
