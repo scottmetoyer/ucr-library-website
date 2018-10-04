@@ -467,3 +467,23 @@ ul.links li a:hover {
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
+
+.top-buffer {
+  margin-top: 20px;
+}
+
+.image-link p {
+  color: #fff;
+  padding-top: 4px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+a.image-link {
+  text-decoration: none;
+}
+
+.image-link p:hover {
+  color: #f1ab00;
+  text-decoration: none;
+}
