@@ -10,29 +10,32 @@
  */
 #}
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        {% for event in events.events %}
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" {% if loop.first %} class="active" {% endif %}></li>
-        {% endfor %}
-    </ol>
+<div id="event-carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         {% for event in events.events %}
-            <div class="carousel-item {% if loop.first %} active {% endif %}">
-                <img src="{{ event.logo.url }}" alt="{{ event.name.text }} slide"/>
-
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ event.name.text }}</h5>
-                    <p>{{ event.description.text }}</p>
+            <div class="card carousel-item {% if loop.first %} active {% endif %}">
+                <img class="card-img-top" src="{{ event.logo.url }}" alt="{{ event.name.text }}"/>
+                <div class="card-body">
+                    <h4>{{ event.name.text }}</h4>
+                    <p class="card-text summary">{{ event.description.text|length > 250 ? event.description.text|slice(0, 250) ~ '...' : event.description.text }}
+                        <a target="_blank" href="{{ event.url }}">Read more</a>
+                    </p>
+                    {% if event.is_series %}
+                        <span class="badge badge-info">Multiple events</span>
+                    {% endif %}
+                    <p>{{ event.start.local | date() }}
+                        -
+                        {{ event.end.local | date() }}</p>
+                    <a target="_blank" href="{{ event.url }}" class="btn btn-primary">RSVP</a>
                 </div>
             </div>
         {% endfor %}
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#event-carousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#event-carousel" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
