@@ -29,8 +29,12 @@
   font-size: 1.0em;
 }
 
-.block-federated-search {
-  margin-top: 40px;
+.block-federated-search-block {
+  margin-top: 10px;
+}
+
+.info-box {
+  margin-top: 30px;
 }
 
 .federated-search form {
