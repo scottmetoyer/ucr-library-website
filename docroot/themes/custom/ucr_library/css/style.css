@@ -487,3 +487,8 @@ a.image-link {
   color: #f1ab00;
   text-decoration: none;
 }
+
+.nav-link.node-readmore {
+  display: block;
+  padding: .5rem 0;
+}

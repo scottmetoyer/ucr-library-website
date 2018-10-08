@@ -7,10 +7,14 @@
 
 .info-box h2 {
     text-transform: uppercase;
-    font-size: 1.4em;
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: solid 1px #3f3f3f;
+    font-size: 1.1em;
     margin-bottom: 1em;
-    color: #868E96;
+    color: #3f3f3f;
     font-weight: bold;
+    font-family: "Trade Gothic Next W01", "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
 } 
 
 .block-eventbrite>h2:before , .block-views-blocknews-block-2>h2:before {
@@ -59,10 +63,33 @@
   background-color: #2d6cc0;
 }
 
-
 .info-box {
   padding: 30px 40px 30px 40px;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
   margin-bottom: 40px;
   border: solid 1px #DBDBDB;
 }
+
+.big-link {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a.big-link {
+  color: #4DADF7;
+  text-decoration: none; 
+}
+
+a.big-link:hover {
+  color: #0a7cd4;
+  text-decoration: none; 
+}
+
+.big-link .fa {
+  font-size: 40px;
+}
+
+.block-views-blocknews-block-2 {
+  padding-right: 40px;
+}
+

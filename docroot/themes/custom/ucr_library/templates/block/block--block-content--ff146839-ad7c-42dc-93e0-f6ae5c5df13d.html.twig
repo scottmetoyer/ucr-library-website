@@ -1,0 +1,90 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a block of general patron popular links
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+        <div{{ content_attributes.addClass('content') }}>
+
+            <div class="info-box">
+                <h2>Popular links</h2>
+                <div class="row pt-2">
+                    <div class="col text-center">
+                        <a class="big-link" href="#">
+                            <i class="fa fa-book"></i>
+                            <div class="pt-1">UCR Catalog</div>
+                        </a>
+                    </div>
+
+                    <div class="col text-center">
+                        <a class="big-link" href="#">
+                            <i class="fa fa-laptop"></i>
+                            <div class="pt-1">Digital Collections</div>
+                        </a>
+                    </div>
+
+                    <div class="col text-center">
+                        <a class="big-link" href="#">
+                            <i class="fa fa-chalkboard-teacher"></i>
+                            <div class="pt-1">Find Course Reserves</div>
+                        </a>
+                    </div>
+
+                    <div class="col text-center">
+                        <a class="big-link" href="#">
+                            <i class="fa fa-school"></i>
+                            <div class="pt-1">Book a Study Space</div>
+                        </a>
+                    </div>
+
+                     <div class="col text-center">
+                        <a class="big-link" href="#">
+                            <i class="fa fa-question"></i>
+                            <div class="pt-1">Ask a Librarian</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    {% endblock %}
+</div>
