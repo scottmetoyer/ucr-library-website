@@ -1,30 +1,30 @@
 .region-featured-top h2 {
-    margin-bottom: 20px;
-    font-size: 2.125rem;
-    color: #329AF0;
-    font-weight: 300;
-} 
+  margin-bottom: 20px;
+  font-size: 2.125rem;
+  color: #329AF0;
+  font-weight: 300;
+}
 
 .info-box h2 {
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 1em;
-    border-bottom: solid 1px #3f3f3f;
-    font-size: 1.1em;
-    margin-bottom: 1em;
-    color: #3f3f3f;
-    font-weight: bold;
-    font-family: "Trade Gothic Next W01", "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
-} 
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: .5em;
+  font-size: 1.1em;
+  color: #868E96;
+  font-weight: bold;
+  font-family: "Trade Gothic Next W01", "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
+}
 
-.block-eventbrite>h2:before , .block-views-blocknews-block-2>h2:before {
-    background: #3AA4DC;
-    content: " ";
-    display: block;
-    height: 5px;
-    width: 5rem;
-    margin-bottom: .375rem;
-    margin-top: 1em;
+.block-eventbrite>h2:before,
+.block-views-blocknews-block-2>h2:before {
+  background: #3AA4DC;
+  content: " ";
+  display: block;
+  height: 5px;
+  width: 5rem;
+  margin-bottom: .375rem;
+  margin-top: 1em;
 }
 
 .btn-lg {
@@ -77,12 +77,12 @@
 
 a.big-link {
   color: #4DADF7;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 a.big-link:hover {
   color: #0a7cd4;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .big-link .fa {
@@ -93,3 +93,20 @@ a.big-link:hover {
   padding-right: 40px;
 }
 
+.hr-theme-slash {
+  display: flex;
+}
+
+.hr-theme-slash .hr-line {
+  width: 100%;
+  position: relative;
+  margin: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #868E96;
+}
+
+.hr-theme-slash .hr-icon {
+  position: relative;
+  top: 3px;
+  color: #868E96;
+}
