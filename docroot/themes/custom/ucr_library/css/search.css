@@ -61,3 +61,12 @@ header #search-block-form {
   border-bottom: 0;
 }
 
+.federated-search input[type=text] {
+  background-color: rgba(45, 108, 192, 0.8);
+  border: none;
+  color: #fff;
+}
+
+.federated-search input[type=text]::placeholder {
+  color: #fff;
+}

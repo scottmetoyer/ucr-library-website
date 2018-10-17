@@ -110,6 +110,7 @@ p.big {
   border: 1px solid #ececec;
   text-transform: uppercase;
   padding: .5rem .75rem;
+  margin-bottom: 30px;
 }
 
 .breadcrumb-item {
@@ -505,4 +506,8 @@ a.image-link {
   font-weight: bold;
   color: #868E96;
   margin-bottom: .5em;
+}
+
+.region-highlighted > .col-md-12 {
+  min-height: 0;
 }

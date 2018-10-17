@@ -1,5 +1,5 @@
 global-styling:
-  version: 1.x
+  version: 1.2
   js:
     js/global.js: {}
   css:
@@ -12,3 +12,4 @@ global-styling:
       css/footer.css: {}
       css/search.css: {}
       css/homepage.css: {}
+      css/carousel.css: {}

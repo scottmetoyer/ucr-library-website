@@ -1,5 +1,5 @@
 .region-featured-top h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 2.125rem;
   color: #329AF0;
   font-weight: 300;
@@ -38,7 +38,7 @@
 }
 
 .info-box {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .federated-search form {
@@ -64,8 +64,8 @@
 }
 
 .info-box {
-  padding: 30px 40px 30px 40px;
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+  padding: 32px 10px 16px 10px;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 40px;
   border: solid 1px #DBDBDB;
 }
@@ -139,25 +139,19 @@ a.big-link:hover {
   margin-bottom: 1em;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  bottom: 0%;
-  top: auto;
-  color: #000;
+#news-carousel {
+  padding-bottom: 20px;
+  margin-bottom: 1em;
 }
 
-.carousel-control-prev {
-  justify-content: flex-start;
+#news-carousel .card-body {
+  height: 360px;
 }
 
-.carousel-control-next {
-  justify-content: flex-end;
+#event-carousel .card-body {
+  height: 360px;
 }
 
-.carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#808080' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-}
-
-.carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#808080' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+#news-carousel .big {
+  font-size: 20px;
 }
