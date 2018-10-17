@@ -70,3 +70,8 @@ header #search-block-form {
 .federated-search input[type=text]::placeholder {
   color: #fff;
 }
+
+.federated-search {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
