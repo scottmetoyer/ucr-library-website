@@ -1,24 +1,23 @@
 <?php
 
-namespace Drupal\eck\Tests;
+namespace Drupal\Tests\eck\Functional;
 
 use Drupal\Core\Url;
-use Drupal\simpletest\WebTestBase;
+use Drupal\Tests\BrowserTestBase;
 
 /**
- * Base class for eck tests
- *
- * @codeCoverageIgnore because we don't have to test the tests
+ * Provides common functionality for ECK functional tests.
  */
-abstract class TestBase extends WebTestBase {
+abstract class FunctionalTestBase extends BrowserTestBase {
 
   /**
-   * Modules to install.
-   *
-   * @var array
+   * {@inheritdoc}
    */
   public static $modules = ['node', 'eck'];
 
+  /**
+   * {@inheritdoc}
+   */
   public function setUp() {
     parent::setUp();
 
@@ -30,14 +29,6 @@ abstract class TestBase extends WebTestBase {
     ];
     $user = $this->createUser($permissions);
     $this->drupalLogin($user);
-  }
-
-  /**
-   * Returns an array of the configurable base fields.
-   * @return array
-   */
-  protected function getConfigurableBaseFields() {
-    return ['created', 'changed', 'uid', 'title'];
   }
 
   /**
@@ -67,9 +58,18 @@ abstract class TestBase extends WebTestBase {
     }
 
     $this->drupalPostForm(Url::fromRoute('eck.entity_type.add'), $edit, t('Create entity type'));
-    $this->assertRaw(t('Entity type %label has been added.', ['%label' => $label]));
-
+    $this->assertSession()->statusCodeEquals(200);
+    $this->assertSession()->responseContains("Entity type <em class=\"placeholder\">$label</em> has been added.");
     return ['id' => $id, 'label' => $label];
+  }
+
+  /**
+   * Returns an array of the configurable base fields.
+   *
+   * @return array
+   */
+  protected function getConfigurableBaseFields() {
+    return ['created', 'changed', 'uid', 'title'];
   }
 
   /**
@@ -77,9 +77,11 @@ abstract class TestBase extends WebTestBase {
    *
    * @param $entity_type
    *  The entity type to add the bundle for.
+   * @param string $label
+   *  The bundle label
    *
-   * @return array
-   *  The machine name and label of the new bundle.
+   * @return array The machine name and label of the new bundle.
+   * The machine name and label of the new bundle.
    */
   protected function createEntityBundle($entity_type, $label = '') {
     if (empty($label)) {
@@ -92,9 +94,10 @@ abstract class TestBase extends WebTestBase {
       'type' => $bundle,
     ];
     $this->drupalPostForm(Url::fromRoute("eck.entity.{$entity_type}_type.add"), $edit, t('Save bundle'));
-    $this->assertRaw(t('The entity bundle %name has been added.', ['%name' => $label]));
+    $this->assertSession()->responseContains("The entity bundle <em class=\"placeholder\">$label</em> has been added.");
 
     return $edit;
   }
+
 
 }
