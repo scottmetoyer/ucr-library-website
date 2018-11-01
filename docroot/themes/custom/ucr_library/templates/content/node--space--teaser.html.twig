@@ -61,15 +61,17 @@
 #}
 {{ attach_library('bootstrap_barrio/node') }}
 
-{%
-  set classes = [
-    'space',
-    'card'
-  ]
-%}
+{% set classes = ['space', 'card'] %}
 
 <div{{ attributes.addClass(classes) }}>
+
     <a class="image-link" href="{{ url }}">
+        {% if node.field_available.value == '1' %}
+            <span class="badge badge-success">AVAILABLE</span>
+        {% else %}
+            <span class="badge badge-danger">IN USE</span>
+        {% endif %}
+
         {{ content.field_image }}
         <div class="card-title">
             {{ label }}
