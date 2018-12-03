@@ -35,7 +35,7 @@
 }
 
 .block-federated-search-block {
-  margin-top: 10px;
+
 }
 
 .info-box {}
@@ -71,7 +71,7 @@
 }
 
 .big-link {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -86,7 +86,7 @@ a.big-link:hover {
 }
 
 .big-link .fa {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .block-views-blocknews-block-2 {
@@ -144,19 +144,19 @@ a.big-link:hover {
   margin-bottom: 1em;
 }
 
-#news-carousel .card-body {
-  height: 360px;
-}
+#news-carousel .card-body {}
 
-#event-carousel .card-body {
-  height: 360px;
-}
+#event-carousel .card-body {}
 
 #news-carousel .big {
   font-size: 20px;
 }
 
 .block-block-contentff146839-ad7c-42dc-93e0-f6ae5c5df13d {
+  margin-top: 30px;
+}
+
+.block-alma-calendar {
   margin-top: 30px;
 }
 
@@ -170,4 +170,10 @@ body.faculty a[href="/faculty"].btn-block.btn-outline-primary {
   background-color: #2268a3;
   color: #fff;
   border: 1px solid #333;
+}
+
+.region-highlighted {
+  background-image: url(/themes/custom/ucr_library/images/general-banner.jpg);
+  margin-left: 0;
+  margin-right: 0;
 }

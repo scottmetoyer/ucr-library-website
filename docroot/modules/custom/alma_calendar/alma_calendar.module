@@ -21,11 +21,8 @@ function alma_calendar_theme($existing, $type, $theme, $path)
             'template' => 'today-hours',
         ),
 
-        'library_calendar_display' => array(
-            'variables' => array(
-                'hours' => null,
-            ),
-            'template' => 'library-calendar',
-        ),
+        'homepage_hours_display' => array(
+            'template' => 'homepage-hours'
+        )
     );
 }
